@@ -1,0 +1,258 @@
+/* ===================== RESET E BASE ===================== */
+body {
+  font-family: Arial, sans-serif;
+  background: #41247e;
+  padding: 20px;
+}
+
+section {
+  margin-bottom: 90px;
+}
+
+.carrossel {
+  position: relative;
+  width: 80%;
+  margin: 0 auto;
+  overflow: hidden;
+  padding: 6rem 0;
+}
+
+/* ===================== BOTÕES GERAIS ===================== */
+.btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255,255,255,0.8);
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  z-index: 10;
+  padding: 0.5rem 1rem;
+  border-radius: 50%;
+}
+.prev { left: 10px; }
+.next { right: 10px; }
+
+.play-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1);
+  background: linear-gradient(145deg, #000000, #00038c);
+  color: #ffd436;
+  border: none;
+  border-radius: 50%;
+  font-size: 2rem;
+  padding: 6px 7px 6px 13px;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.3s ease, transform 0.2s ease;
+  box-shadow: 
+    0 5px 10px rgba(0,0,0,0.3),
+    inset 0 3px 6px rgba(255,255,255,0.3),
+    inset 0 -3px 6px rgba(0,0,0,0.4);
+}
+
+@keyframes pulse {
+  0%,100% { transform: translate(-50%, -50%) scale(1); }
+  50% { transform: translate(-50%, -50%) scale(1.15); }
+}
+
+/* ===================== MODELO 1 ===================== */
+.carrossel.modelo1 .carrossel-container {
+  display: flex;
+  justify-content: flex-start;
+  gap: 30px;
+  transition: transform 0.5s ease;
+  align-items: center;
+}
+
+.card1 {
+  flex: 0 0 auto;
+  width: 300px;
+  height: 350px;
+  background-color: #f0f0f0;
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  box-shadow: 
+    0 5px 10px rgba(0,0,0,0.15),
+    0 10px 20px rgba(0,0,0,0.2),
+    0 20px 40px rgba(0,0,0,0.25);
+  transition: transform 0.3s ease, opacity 0.3s ease, box-shadow 0.3s ease;
+  transform-style: preserve-3d;
+}
+
+.card1 img { width: 100%; height: 100%; object-fit: cover; border-radius: 12px; }
+.card1.active { transform: scale(1.1); opacity: 1; }
+.card1:hover { transform: translateY(-10px) rotateX(5deg) rotateY(5deg); }
+
+/* ===================== MODELO 2 ===================== */
+.carrossel.modelo2 .carrossel-container {
+  display: flex;
+  justify-content: flex-start;
+  gap: 30px;
+  transition: transform 0.5s ease;
+  align-items: center;
+}
+
+.card2 {
+  flex: 0 0 auto;
+  width: 300px;
+  height: 350px;
+  background-color: #f0f0f0;
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  position: relative;
+  box-shadow: 
+    0 5px 10px rgba(0,0,0,0.15),
+    0 10px 20px rgba(0,0,0,0.2),
+    0 20px 40px rgba(0,0,0,0.25);
+  transition: transform 0.3s ease, opacity 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card2 img, .card2 video { width: 100%; height: 100%; object-fit: cover; border-radius: 12px; }
+.card2.active { transform: scale(1.2); background: #e67e22; }
+.card2.active .play-btn { opacity: 1; animation: pulse 1.5s infinite; }
+
+/* ===================== MODELO 3 ===================== */
+.carrossel.modelo3 .carrossel-container { 
+  position: relative;
+  display: block; 
+  height: 20rem; 
+  overflow: visible; 
+}
+
+.carrossel.modelo3 .card3 {
+  position: absolute !important;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) !important;
+  width: 35rem;
+  height: 20rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.45s ease, transform 0.45s ease;
+  z-index: 0;
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.carrossel.modelo3 .card3.active {
+  opacity: 1;
+  z-index: 999;
+  pointer-events: auto;
+}
+
+.carrossel.modelo3 .card3 img {
+  width: 30rem;
+  height: 20rem;
+  transform: scaleX(1.2);
+  border-radius: 20px;
+}
+
+/* ===================== MODELO 4 ===================== */
+.carrossel.modelo4 .carrossel-container {
+  display: flex;
+  justify-content: flex-start; /* deixa o JS controlar a centralização */
+  align-items: center;
+  gap: 30px;
+  perspective: 1000px;
+  width: 100%;
+  transition: transform 0.5s ease; /* suaviza o movimento */
+}
+
+.card4 {
+  width: 180px;
+  height: 250px;
+  flex: 0 0 auto;
+  perspective: 1000px;
+  transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.6s ease;
+}
+
+.card4:hover .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  backface-visibility: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 20px;
+  color: #fff;
+}
+
+.card-front { background: #3498db; }
+.card-back { background: #2ecc71; transform: rotateY(180deg); }
+
+.card4.active {
+  transform: scale(1.2);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+  z-index: 10;
+}
+.card4:not(.active) {
+  transform: scale(0.9);
+  opacity: 0.8;
+  z-index: 1;
+}
+
+/* ===================== MODELO 5 ===================== */
+.carrossel.modelo5 .carrossel-container {
+  display: flex;
+  gap: 30px;
+  animation: scroll 10s linear infinite;
+}
+
+.card5 {
+  flex: 0 0 auto;
+  width: 300px;
+  height: 350px;
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  background-color: #f0f0f0;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+@keyframes scroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+
+/* ===================== RESPONSIVIDADE ===================== */
+@media (max-width: 1024px) {
+  .carrossel { width: 90%; }
+  .card1, .card2, .card4, .card5 { width: 160px; height: 200px; }
+  .btn { font-size: 1.8rem; padding: 0.4rem 0.8rem; }
+  .play-btn { font-size: 1.8rem; padding: 10px 14px; }
+}
+
+@media (max-width: 600px) {
+  body { padding: 10px; }
+  .carrossel { width: 100%; padding: 1rem 0; }
+  .carrossel-container { gap: 15px; }
+  .card1, .card2, .card4, .card5 { width: 120px; height: 160px; font-size: 1rem; }
+  .btn { font-size: 1.5rem; padding: 0.3rem 0.6rem; }
+  .play-btn { font-size: 1.5rem; padding: 8px 12px; }
+}

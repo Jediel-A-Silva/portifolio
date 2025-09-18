@@ -88,14 +88,16 @@ body {
   margin-bottom: 10px;
 }
 
+
+
 .texto h1 .nome {
   color: #00ff99;
 }
 
 .texto h2 {
-  font-size: 24px;
-  margin-bottom: 20px;
-  color: #aaa;
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #aaa;
 }
 
 .texto .descricao {
@@ -103,6 +105,15 @@ body {
   color: #ccc;
 }
 
+#h2desk-mobile{
+font-size: 24px;
+    margin-bottom: 15px;
+    color: #aaa;
+    left: 14rem;
+    position: relative;
+}
+
+/* Botão */
 .btn {
   display: inline-block;
   padding: 12px 25px;
@@ -139,6 +150,53 @@ body {
   width: 350px;
   border-radius: 20px;
   box-shadow: 0 0 30px rgba(0, 255, 153, 0.3);
+}
+
+.modelos {
+  padding: 4rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+/* Cada bloco */
+.modelos .bloco {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+/* Imagem responsiva */
+.imagem{
+  display: flex;
+  justify-content: flex-end; /* manda pro canto direito */
+  align-items: flex-start;   /
+}
+
+.imagem img {
+  transition: transform 0.4s ease;
+}
+
+.imagem img:hover {
+  transform: scale(1.1); /* aumenta 10% */
+}
+
+
+.modelos .bloco img {
+  max-width: 65%;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+/* Texto */
+.modelos .bloco .texto {
+  flex: 1;
+}
+
+/* Inverter ordem na terceira div */
+.modelos .bloco3 {
+  flex-direction: row-reverse;
 }
 
 /* ===== CARROSSEL ===== */
@@ -225,4 +283,12 @@ body {
   .card img {
     height: 220px;
   }
+    .modelos .bloco {
+    flex-direction: column;
+    text-align: center;
+  }
+  .modelos .bloco3 {
+    flex-direction: column;
+  }
 }
+

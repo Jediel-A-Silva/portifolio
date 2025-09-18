@@ -1,81 +1,133 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <title>Mockup Site Cliente</title>
-  <style>
-    body {
-      background: #f2f2f2;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      margin: 0;
-    }
-
-    .mockup {
-      position: relative;
-      width: 900px; /* ajuste conforme necessário */
-    }
-
-    /* imagem base (notebook + celular) */
-    .mockup img.base {
-      width: 100%;
-      height: auto;
-      display: block;
-    }
-
-    /* tela do notebook */
-    .screen.laptop {
-    position: absolute;
-    top: 13.1%;
-    left: 20.6%;
-    width: 46.9%;
-    height: 60.9%;
-    overflow: hidden;
-    background: #413232;
-    border-radius: 5px 5px 2px 4px;
-}
-
-    .screen.laptop img {
-    width: 27rem;
-    height: 19rem;
-    object-fit: initial;
-}
-
-    /* tela do celular */
-    .screen.mobile {
-    position: absolute;
-    top: 41.5%;
-    left: 73.8%;
-    width: 12.6%;
-    height: 51.7%;
-    overflow: hidden;
-    background: #746565;
-    border-radius: 12px 12px 12px 12px;
-}
-
-    .screen.mobile img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>5 Modelos de Carrosséis</title>
+<link rel="stylesheet" href="cardscarrossel.css">
 </head>
 <body>
-  <div class="mockup">
-    <!-- imagem base (a que você me mandou) -->
-    <img src="/modelos/img/unnamed1.jpg" alt="Mockup base" class="base">
 
-    <!-- print da versão web -->
-    <div class="screen laptop">
-      <img src="/modelos/img/web.jpg" alt="Versão Web do site">
+<!-- ========================== -->
+<!-- CARROSSEL MODELO 1 -->
+<!-- ========================== -->
+<section class="carrossel modelo1">
+  <button class="btn prev">⟨</button>
+  <div class="carrossel-container">
+    <div class="card1"><img src="/modelos/img/profissao1.jpg" alt="Descrição da imagem 1"></div>
+    <div class="card1"><img src="/modelos/img/profissao2.jpg" alt="Descrição da imagem 2"></div>
+    <div class="card1"><img src="/modelos/img/profissao3.jpg" alt="Descrição da imagem 3"></div>
+    <div class="card1"><img src="/modelos/img/profissao4.jpg" alt="Descrição da imagem 4"></div>
+    <div class="card1"><img src="/modelos/img/profissao5.jpg" alt="Descrição da imagem 5"></div>
+    <div class="card1"><img src="/modelos/img/profissao6.jpg" alt="Descrição da imagem 6"></div>
+    <div class="card1"><img src="/modelos/img/profissao7.jpg" alt="Descrição da imagem 7"></div>
+  </div>
+  <button class="btn next">⟩</button>
+</section>
+
+<!-- ========================== -->
+<!-- CARROSSEL MODELO 2 (vídeos) -->
+<!-- ========================== -->
+<section class="carrossel modelo2">
+  <button class="btn prev">⟨</button>
+  <div class="carrossel-container">
+    <div class="card2">
+      <video src="/modelos/clips/clip1.mp4"></video>
+      <button class="play-btn">▶</button>
     </div>
-
-    <!-- print da versão mobile -->
-    <div class="screen mobile">
-      <img src="/modelos/img/mobile.png" alt="Versão Mobile do site">
+    <div class="card2">
+      <video src="/modelos/clips/clip2.mp4"></video>
+      <button class="play-btn">▶</button>
+    </div>
+    <div class="card2">
+      <video src="/modelos/clips/clip3.mp4"></video>
+      <button class="play-btn">▶</button>
+    </div>
+    <div class="card2">
+      <video src="/modelos/clips/clip4.mp4"></video>
+      <button class="play-btn">▶</button>
+    </div>
+    <div class="card2">
+      <video src="/modelos/clips/clip5.mp4"></video>
+      <button class="play-btn">▶</button>
+    </div>
+    <div class="card2">
+      <video src="/modelos/clips/clip6.mp4"></video>
+      <button class="play-btn">▶</button>
+    </div>
+    <div class="card2">
+      <video src="/modelos/clips/clip7.mp4"></video>
+      <button class="play-btn">▶</button>
     </div>
   </div>
+  <button class="btn next">⟩</button>
+</section>
+
+<!-- ========================== -->
+<!-- CARROSSEL MODELO 3 (fade) -->
+<!-- ========================== -->
+<section class="carrossel modelo3">
+  <button class="btn prev">⟨</button>
+  <div class="carrossel-container">
+    <div class="card3"><img src="/selv/beijaflor.jpg" alt="Imagem 1"></div>
+    <div class="card3"><img src="/selv/borboleta.jpg" alt="Imagem 2"></div>
+    <div class="card3"><img src="/selv/cachorro.jpg" alt="Imagem 3"></div>
+    <div class="card3"><img src="/selv/elefantes.jpg" alt="Imagem 4"></div>
+    <div class="card3"><img src="/selv/gatos.jpg" alt="Imagem 5"></div>
+    <div class="card3"><img src="/selv/onça.jpg" alt="Imagem 6"></div>
+    <div class="card3"><img src="/selv/pinguins.jpg" alt="Imagem 7"></div>
+  </div>
+  <button class="btn next">⟩</button>
+</section>
+
+<!-- ========================== -->
+<!-- CARROSSEL MODELO 4 (3D) -->
+<!-- ========================== -->
+<section class="carrossel modelo4">
+  <button class="btn prev">⟨</button>
+  <div class="carrossel-container">
+    
+    <div class="card4">
+      <div class="card-inner">
+        <div class="card-front">4-1 Frente</div>
+        <div class="card-back">4-1 Verso</div>
+      </div>
+    </div>
+
+    <div class="card4 active">
+      <div class="card-inner">
+        <div class="card-front">4-2 Frente</div>
+        <div class="card-back">4-2 Verso</div>
+      </div>
+    </div>
+
+    <div class="card4">
+      <div class="card-inner">
+        <div class="card-front">4-3 Frente</div>
+        <div class="card-back">4-3 Verso</div>
+      </div>
+    </div>
+
+  </div>
+  <button class="btn next">⟩</button>
+</section>
+
+
+<!-- ========================== -->
+<!-- CARROSSEL MODELO 5 (AUTOPLAY) -->
+<!-- ========================== -->
+<section class="carrossel modelo5">
+  <div class="carrossel-container">
+    <div class="card5">5-1</div>
+    <div class="card5">5-2</div>
+    <div class="card5">5-3</div>
+    <div class="card5">5-4</div>
+    <div class="card5">5-5</div>
+    <div class="card5">5-6</div>
+    <div class="card5">5-7</div>
+  </div>
+</section>
+
+<script src="cardscarrossel.js"></script>
 </body>
 </html>
