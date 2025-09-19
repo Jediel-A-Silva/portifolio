@@ -9,37 +9,51 @@ if (carrossel1) {
   const nextBtn = carrossel1.querySelector('.next');
 
   let index = Math.floor(cards.length / 2);
-  const totalCards = cards.length;
+  const total = cards.length;
 
   function updateCarousel() {
-    cards.forEach(card => card.classList.remove('active'));
-    cards[index].classList.add('active');
+    cards.forEach((card, i) => {
+      card.classList.remove('active', 'left', 'right', 'far-left', 'far-right');
 
-    const cardWidth = cards[0].offsetWidth + (window.innerWidth <= 600 ? 15 : 30);
+      if (i === index) {
+        card.classList.add('active');
+      } else if (i === index - 1) {
+        card.classList.add('left');
+      } else if (i === index + 1) {
+        card.classList.add('right');
+      } else if (i === index - 2) {
+        card.classList.add('far-left');
+      } else if (i === index + 2) {
+        card.classList.add('far-right');
+      }
+    });
+
+    const cardWidth = cards[0].offsetWidth + 30;
     const containerWidth = carrossel1.offsetWidth;
     const offset = -(index * cardWidth - (containerWidth / 2 - cards[0].offsetWidth / 2));
     container.style.transform = `translateX(${offset}px)`;
+    container.style.transition = "transform 0.6s ease"; // 🔹 transição suave
   }
 
   nextBtn.addEventListener('click', () => {
-    if (index < totalCards - 1) index++;
-    updateCarousel();
+    if (index < total - 1) {
+      index++;
+      updateCarousel();
+    }
   });
 
   prevBtn.addEventListener('click', () => {
-    if (index > 0) index--;
-    updateCarousel();
-  });
-
-  document.addEventListener('keydown', e => {
-    if (e.key === 'ArrowRight' && index < totalCards - 1) index++;
-    else if (e.key === 'ArrowLeft' && index > 0) index--;
-    updateCarousel();
+    if (index > 0) {
+      index--;
+      updateCarousel();
+    }
   });
 
   window.addEventListener('resize', updateCarousel);
   updateCarousel();
 }
+
+
 
 // ==========================
 // CARROSSEL MODELO 2
