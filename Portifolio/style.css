@@ -10,7 +10,7 @@ body {
   background: url("img-portifolio/db50.png") no-repeat center center;
   background-size: cover;
   background-attachment: fixed; /* opcional: dá efeito parallax */
-  color: #fff;
+  color: #fff5f5;
   line-height: 1.6;
   overflow-x: hidden;
   scroll-padding-top: 80px;
@@ -33,7 +33,7 @@ body {
 .navbar .logo {
   font-size: 20px;
   font-weight: bold;
-  color: #00ff99;
+  color: #0c3787;
 }
 
 
