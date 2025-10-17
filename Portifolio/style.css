@@ -38,7 +38,7 @@ body {
 
 
 .navbar nav a:hover {
-  color: #00ff99;
+  color: #082e1f;
 }
 
 .search {
@@ -99,7 +99,7 @@ body {
 .texto h2 {
   font-size: clamp(18px, 2.5vw, 24px);
   margin-bottom: 20px;
-  color: #aaa;
+  color: #5d5151;
 }
 
 .texto .descricao {
