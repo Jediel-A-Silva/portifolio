@@ -7,7 +7,7 @@
 
 body {
   font-family: Arial, sans-serif;
-  background: url("img-portifolio/db50.png") no-repeat center center;
+  background: url("img-portifolio/db501.png") no-repeat center center;
   background-size: cover;
   background-attachment: fixed; /* opcional: dá efeito parallax */
   color: #fff5f5;
@@ -33,7 +33,7 @@ body {
 .navbar .logo {
   font-size: 20px;
   font-weight: bold;
-  color: #0c3787;
+  color: #ffffff;
 }
 
 
@@ -99,7 +99,7 @@ body {
 .texto h2 {
   font-size: clamp(18px, 2.5vw, 24px);
   margin-bottom: 20px;
-  color: #5d5151;
+  color: #aaa;
 }
 
 .texto .descricao {
@@ -196,6 +196,42 @@ body {
   position: relative;
   z-index: 1;
 }
+
+/* 🔹 Corrigir espaçamento e fundo da seção "Sobre" */
+#sobre {
+  background: transparent; /* mantém o fundo igual ao da página */
+  color: #fff; /* texto visível em fundo escuro */
+  padding: 60px 20px; /* reduz o espaço */
+  text-align: center;
+}
+
+#sobre h2 {
+  font-size: 2em;
+  color: #00c3ff;
+  margin-bottom: 15px;
+}
+
+#sobre p {
+  max-width: 800px;
+  margin: 0 auto;
+  font-size: 1.1em;
+  line-height: 1.6;
+  color: #ddd;
+}
+
+/* 🔹 Ajustar outras seções para manter padrão */
+#projetos, #depoimentos {
+  background: transparent;
+  color: #fff;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+#projetos h2, #depoimentos h2 {
+  color: #00c3ff;
+  margin-bottom: 15px;
+}
+
 
 /* Pseudo-elemento animado para o gradiente */
 .foto-container::before {

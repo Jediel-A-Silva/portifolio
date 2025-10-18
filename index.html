@@ -5,12 +5,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Portfólio Jediel Andrade</title>
     <link rel="stylesheet" href="Portifolio/style.css" />
+
+    <!-- 🔹 Rolagem suave e estilo do menu -->
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+      .navbar nav a {
+        color: white;
+        margin: 0 15px;
+        text-decoration: none;
+        font-weight: 500;
+        transition: color 0.3s;
+      }
+      .navbar nav a:hover {
+        color: #00bcd4;
+      }
+      .navbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+    </style>
   </head>
 
   <body>
     <!-- 🔹 Navbar -->
     <header class="navbar">
       <div class="logo">Portfólio</div>
+
+      <nav>
+        <a href="#inicio">Início</a>
+        <a href="#carrossel-box">Projetos</a>
+        <a href="#carrossel-final">Modelos</a>
+        <a href="#modelos">Desktop x Mobile</a>
+        <a href="#contato">Contato</a>
+      </nav>
 
       <div class="search">
         <input type="text" placeholder="Search..." />
@@ -19,7 +49,7 @@
     </header>
 
     <!-- 🔹 Seção Principal -->
-    <section class="hero">
+    <section id="inicio" class="hero">
       <div class="texto">
         <p>Olá, sou</p>
         <h1><span class="nome">Jediel Andrade</span></h1>
@@ -41,7 +71,7 @@
     </section>
 
     <!-- 🔹 Carrossel Box -->
-    <section class="bloco bloco3">
+    <section id="carrossel-box" class="bloco bloco3">
       <div id="caixinhaCarrosselBox" class="caixinha-carrossel-box">
         <div class="carrosselBox">
           <!-- Slides -->
@@ -79,7 +109,7 @@
     </section>
 
     <!-- 🔹 Carrossel no final -->
-    <section>
+    <section id="carrossel-final">
       <div class="carrossel">
         <div class="carrossel-container">
 
@@ -274,7 +304,7 @@
     </section>
 
     <!-- 🔹 Modelos Desktop x Mobile -->
-    <section class="modelos">
+    <section id="modelos" class="modelos">
       <div class="bloco bloco1">
         <div id="h2desk-mobile" class="texto">
           <h2>Modelos Desktop e Mobile</h2>
@@ -291,7 +321,7 @@
     </section>
 
     <!-- 🔹 Rodapé estilo banner de vlogger -->
-    <footer class="footer">
+    <footer id="contato" class="footer">
       <div class="footer-content">
         <div class="profile">
           <h2>JOHN DOE</h2>
