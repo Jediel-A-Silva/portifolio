@@ -13,127 +13,106 @@
   <p>Basta escolher o modelo que combina com você e usar imediatamente.</p>
 </div>
 
-<section>
-  <div class="carrossel modelo1">
-    <div class="carrossel-container">
-      <div class="card1"><img src="/carrossel-projeto/img-carrossel/profissao1.jpg" alt="Descrição da imagem 1"></div>
-      <div class="card1"><img src="/carrossel-projeto/img-carrossel/profissao2.jpg" alt="Descrição da imagem 2"></div>
-      <div class="card1"><img src="/carrossel-projeto/img-carrossel/profissao3.jpg" alt="Descrição da imagem 2"></div>
-      <div class="card1"><img src="/carrossel-projeto/img-carrossel/profissao4.jpg" alt="Descrição da imagem 3"></div>
-      <div class="card1"><img src="/carrossel-projeto/img-carrossel/profissao5.jpg" alt="Descrição da imagem 4"></div>
-      <div class="card1"><img src="/carrossel-projeto/img-carrossel/profissao6.jpg" alt="Descrição da imagem 5"></div>
-    </div>
-
-    <div class="carrossel-botoes">
-      <button class="prev">⟨</button>
-      <button class="next">⟩</button>
-    </div>
+<!-- ========================== -->
+<!-- SEÇÃO PRINCIPAL DOS CARROSSEIS -->
+<!-- ========================== -->
+<section class="carrosseis-interativos">
+  <div class="botoes-carrosseis">
+    <button class="ativo" data-carousel="modelo1">Coverflow/3D</button>
+    <button data-carousel="modelo2">Media/Video</button>
+    <button data-carousel="modelo3">Simples</button>
+    <button data-carousel="modelo4">Centralizado</button>
+    <button data-carousel="modelo5">Autoplay</button>
   </div>
-</section>
 
-
-<!-- ========================== -->
-<!-- CARROSSEL MODELO 2 (vídeos) -->
-<!-- ========================== -->
-<section class="carrossel modelo2">
-  <button class="btn prev">⟨</button>
-  <div class="carrossel-container">
-    <div class="card2">
-      <video src="/carrossel-projeto/video-carrossel/clip1.mp4"></video>
-      <button class="play-btn">▶</button>
-    </div>
-    <div class="card2">
-      <video src="/carrossel-projeto/video-carrossel/clip2.mp4"></video>
-      <button class="play-btn">▶</button>
-    </div>
-    <div class="card2">
-      <video src="/carrossel-projeto/video-carrossel/clip3.mp4"></video>
-      <button class="play-btn">▶</button>
-    </div>
-    <div class="card2">
-      <video src="/carrossel-projeto/video-carrossel/clip4.mp4"></video>
-      <button class="play-btn">▶</button>
-    </div>
-    <div class="card2">
-      <video src="/carrossel-projeto/video-carrossel/clip5.mp4"></video>
-      <button class="play-btn">▶</button>
-    </div>
-    <div class="card2">
-      <video src="/carrossel-projeto/video-carrossel/clip6.mp4"></video>
-      <button class="play-btn">▶</button>
-    </div>
-    <div class="card2">
-      <video src="/carrossel-projeto/video-carrossel/clip7.mp4"></video>
-      <button class="play-btn">▶</button>
-    </div>
-  </div>
-  <button class="btn next">⟩</button>
-</section>
-
-<!-- ========================== -->
-<!-- CARROSSEL MODELO 3 (fade) -->
-<!-- ========================== -->
-<section class="carrossel modelo3">
-  <button class="btn prev">⟨</button>
-  <div class="carrossel-container">
-    <div class="card3"><img src="img-carrossel/beijaflor.jpg" alt="Imagem 1"></div>
-    <div class="card3"><img src="img-carrossel/borboleta.jpg" alt="Imagem 2"></div>
-    <div class="card3"><img src="img-carrossel/cachorro.jpg" alt="Imagem 3"></div>
-    <div class="card3"><img src="img-carrossel/elefantes.jpg" alt="Imagem 4"></div>
-    <div class="card3"><img src="img-carrossel/gatos.jpg" alt="Imagem 5"></div>
-    <div class="card3"><img src="img-carrossel/onça.jpg" alt="Imagem 6"></div>
-    <div class="card3"><img src="img-carrossel/leao.jpg" alt="Imagem 7"></div>
-  </div>
-  <button class="btn next">⟩</button>
-</section>
-
-<!-- ========================== -->
-<!-- CARROSSEL MODELO 4 (3D) -->
-<!-- ========================== -->
-<section class="carrossel modelo4">
-  <button class="btn prev">⟨</button>
-  <div class="carrossel-container">
-    
-    <div class="card4">
-      <div class="card-inner">
-        <div class="card-front">4-1 Frente</div>
-        <div class="card-back">4-1 Verso</div>
+  <!-- 🔹 MODELO 1 -->
+  <div class="carrossel-box modelo1 ativo">
+    <div class="carrossel modelo1">
+      <div class="carrossel-container">
+        <div class="card1"><img src="/carrossel-projeto/img-carrossel/profissao1.jpg" alt="Imagem 1"></div>
+        <div class="card1"><img src="/carrossel-projeto/img-carrossel/profissao2.jpg" alt="Imagem 2"></div>
+        <div class="card1"><img src="/carrossel-projeto/img-carrossel/profissao3.jpg" alt="Imagem 3"></div>
+        <div class="card1"><img src="/carrossel-projeto/img-carrossel/profissao4.jpg" alt="Imagem 4"></div>
+        <div class="card1"><img src="/carrossel-projeto/img-carrossel/profissao5.jpg" alt="Imagem 5"></div>
+      </div>
+      <div class="carrossel-botoes">
+        <button class="prev">⟨</button>
+        <button class="next">⟩</button>
       </div>
     </div>
-
-    <div class="card4 active">
-      <div class="card-inner">
-        <div class="card-front">4-2 Frente</div>
-        <div class="card-back">4-2 Verso</div>
-      </div>
-    </div>
-
-    <div class="card4">
-      <div class="card-inner">
-        <div class="card-front">4-3 Frente</div>
-        <div class="card-back">4-3 Verso</div>
-      </div>
-    </div>
-
   </div>
-  <button class="btn next">⟩</button>
+
+  <!-- 🔹 MODELO 2 -->
+  <div class="carrossel-box modelo2">
+    <section class="carrossel modelo2">
+      <button class="btn prev">⟨</button>
+      <div class="carrossel-container">
+        <div class="card2"><video src="/carrossel-projeto/video-carrossel/clip1.mp4"></video><button class="play-btn">▶</button></div>
+        <div class="card2"><video src="/carrossel-projeto/video-carrossel/clip2.mp4"></video><button class="play-btn">▶</button></div>
+        <div class="card2"><video src="/carrossel-projeto/video-carrossel/clip3.mp4"></video><button class="play-btn">▶</button></div>
+      </div>
+      <button class="btn next">⟩</button>
+    </section>
+  </div>
+
+  <!-- 🔹 MODELO 3 -->
+  <div class="carrossel-box modelo3">
+    <section class="carrossel modelo3">
+      <button class="btn prev">⟨</button>
+      <div class="carrossel-container">
+        <div class="card3"><img src="img-carrossel/beijaflor.jpg" alt="Imagem 1"></div>
+        <div class="card3"><img src="img-carrossel/borboleta.jpg" alt="Imagem 2"></div>
+        <div class="card3"><img src="img-carrossel/cachorro.jpg" alt="Imagem 3"></div>
+      </div>
+      <button class="btn next">⟩</button>
+    </section>
+  </div>
+
+  <!-- 🔹 MODELO 4 -->
+  <div class="carrossel-box modelo4">
+    <section class="carrossel modelo4">
+      <button class="btn prev">⟨</button>
+      <div class="carrossel-container">
+        <div class="card4"><div class="card-inner"><div class="card-front">4-1 Frente</div><div class="card-back">4-1 Verso</div></div></div>
+        <div class="card4 active"><div class="card-inner"><div class="card-front">4-2 Frente</div><div class="card-back">4-2 Verso</div></div></div>
+        <div class="card4"><div class="card-inner"><div class="card-front">4-3 Frente</div><div class="card-back">4-3 Verso</div></div></div>
+      </div>
+      <button class="btn next">⟩</button>
+    </section>
+  </div>
+
+  <!-- 🔹 MODELO 5 -->
+  <div class="carrossel-box modelo5">
+    <section class="carrossel modelo5">
+      <div class="carrossel-container">
+        <div class="card5">5-1</div>
+        <div class="card5">5-2</div>
+        <div class="card5">5-3</div>
+        <div class="card5">5-4</div>
+        <div class="card5">5-5</div>
+      </div>
+    </section>
+  </div>
 </section>
 
+<script>
+  // ===== Troca entre carrosséis =====
+  const botoes = document.querySelectorAll('.botoes-carrosseis button');
+  const carrosseis = document.querySelectorAll('.carrossel-box');
 
-<!-- ========================== -->
-<!-- CARROSSEL MODELO 5 (AUTOPLAY) -->
-<!-- ========================== -->
-<section class="carrossel modelo5">
-  <div class="carrossel-container">
-    <div class="card5">5-1</div>
-    <div class="card5">5-2</div>
-    <div class="card5">5-3</div>
-    <div class="card5">5-4</div>
-    <div class="card5">5-5</div>
-    <div class="card5">5-6</div>
-    <div class="card5">5-7</div>
-  </div>
-</section>
+  botoes.forEach(botao => {
+    botao.addEventListener('click', () => {
+      botoes.forEach(b => b.classList.remove('ativo'));
+      botao.classList.add('ativo');
+
+      const alvo = botao.getAttribute('data-carousel');
+      carrosseis.forEach(c => {
+        c.classList.remove('ativo');
+        if (c.classList.contains(alvo)) c.classList.add('ativo');
+      });
+    });
+  });
+</script>
 
 <script src="/carrossel-projeto/cardscarrossel.js"></script>
 </body>

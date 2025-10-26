@@ -4,12 +4,18 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Portfólio Jediel Andrade</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="Portifolio/style.css" />
 
-    <!-- 🔹 Rolagem suave e estilo do menu -->
+    <!-- 🔹 Rolagem suave -->
     <style>
       html {
         scroll-behavior: smooth;
+      }
+      .navbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
       }
       .navbar nav a {
         color: white;
@@ -21,11 +27,6 @@
       .navbar nav a:hover {
         color: #00bcd4;
       }
-      .navbar {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-      }
     </style>
   </head>
 
@@ -33,12 +34,11 @@
     <!-- 🔹 Navbar -->
     <header class="navbar">
       <div class="logo">Portfólio</div>
-
       <nav>
         <a href="#inicio">Início</a>
-        <a href="#carrossel-box">Carrosseis</a>
-        <a href="#Cartões Digitais">Cartões Digitais</a>
+        <a href="#carrossel-box">Carrosséis</a>
         <a href="#modelos">Desktop x Mobile</a>
+        <a href="#cards-eventos">Cartões Digitais</a>
         <a href="#contato">Contato</a>
       </nav>
 
@@ -48,7 +48,7 @@
       </div>
     </header>
 
-    <!-- 🔹 Seção Principal -->
+    <!-- 🔹 Início -->
     <section id="inicio" class="hero">
       <div class="texto">
         <p>Olá, sou</p>
@@ -62,45 +62,25 @@
       </div>
 
       <div class="foto-container">
-        <img
-          class="foto-glow"
-          src="Portifolio/img-portifolio/ftgp1.jpg"
-          alt="Foto Jediel Andrade"
-        />
+        <img class="foto-glow" src="Portifolio/img-portifolio/ftgp1.jpg" alt="Foto Jediel Andrade" />
       </div>
     </section>
 
-    <!-- 🔹 Carrossel Box -->
+    <!-- 🔹 Carrossel -->
     <section id="carrossel-box" class="bloco bloco3">
-      <div id="caixinhaCarrosselBox" class="caixinha-carrossel-box">
+      <div class="caixinha-carrossel-box">
         <div class="carrosselBox">
-          <!-- Slides -->
-          <div class="slideBox ativo">
-            <img src="Portifolio/img-portifolio/manic.png" alt="Modelo 1" />
-          </div>
-          <div class="slideBox">
-            <img src="Portifolio/img-portifolio/cabel.png" alt="Modelo 2" />
-          </div>
-          <div class="slideBox">
-            <img src="Portifolio/img-portifolio/fermaleobs.png" alt="Modelo 3" />
-          </div>
+          <div class="slideBox ativo"><img src="Portifolio/img-portifolio/manic.png" alt="Modelo 1" /></div>
+          <div class="slideBox"><img src="Portifolio/img-portifolio/cabel.png" alt="Modelo 2" /></div>
+          <div class="slideBox"><img src="Portifolio/img-portifolio/fermaleobs.png" alt="Modelo 3" /></div>
         </div>
       </div>
 
       <div class="texto">
         <h2>Dê o próximo passo para o sucesso da sua marca</h2>
-        <p>
-          Design moderno para destacar seus conteúdos de forma profissional.
-        </p>
-        <a
-          id="linkModelosBox"
-          class="btn link-modelos-box"
-          href="carrossel-projeto/model1.html"
-        >
-          Ver mais modelos de carrossel
-        </a>
+        <p>Design moderno para destacar seus conteúdos de forma profissional.</p>
+        <a class="btn" href="carrossel-projeto/model1.html">Ver mais modelos</a>
 
-        <!-- Navegação -->
         <div class="navigation">
           <button class="nav-btn prev">❮</button>
           <button class="nav-btn next">❯</button>
@@ -108,338 +88,92 @@
       </div>
     </section>
 
-    <!-- 🔹 Carrossel no final -->
-    <section id="carrossel-final">
-      <div class="carrossel">
-        <div class="carrossel-container">
-
-          <!-- Card 1 -->
-          <div class="card">
-            <img src="Portifolio/img-carrossel/model1.png" alt="Cartão Digital 1" />
-            <h3>Cartão Digital - Modelo 1</h3>
-            <p class="descricao">
-              Perfeito para profissionais divulgarem seus serviços com estilo.
-            </p>
-            <span class="preco">R$ 79,90</span>
-            <a
-              href="https://wa.me/5511961651633?text=Olá! Quero encomendar o Cartão Digital - Modelo 1 por R$79,90."
-              target="_blank"
-              class="btn-card"
-              >Encomendar</a>
-          </div>
-
-          <!-- Card 2 -->
-          <div class="card">
-            <img src="Portifolio/img-carrossel/model2.png" alt="Cartão Digital 2" />
-            <h3>Cartão Digital - Modelo 2</h3>
-            <p class="descricao">
-              Compartilhe contatos, links e serviços de forma prática.
-            </p>
-            <span class="preco">R$ 79,90</span>
-            <a
-              href="https://wa.me/5511961651633?text=Olá! Quero encomendar o Cartão Digital - Modelo 2 por R$79,90."
-              target="_blank"
-              class="btn-card"
-              >Encomendar</a>
-          </div>
-
-          <!-- Card 3 -->
-          <div class="card">
-            <img src="Portifolio/img-carrossel/model3.png" alt="Cartão Digital 3" />
-            <h3>Cartão Digital - Modelo 3</h3>
-            <p class="descricao">
-              Ideal para empresas modernas que querem destacar sua marca.
-            </p>
-            <span class="preco">R$ 79,90</span>
-            <a
-              href="https://wa.me/5511961651633?text=Olá! Quero encomendar o Cartão Digital - Modelo 3 por R$79,90."
-              target="_blank"
-              class="btn-card"
-              >Encomendar</a>
-          </div>
-
-          <!-- Card 4 -->
-          <div class="card">
-            <img src="Portifolio/img-carrossel/model4.png" alt="Cartão Digital 4" />
-            <h3>Cartão Digital - Modelo 4</h3>
-            <p class="descricao">
-              Design limpo e responsivo para todos os dispositivos.
-            </p>
-            <span class="preco">R$ 79,90</span>
-            <a
-              href="https://wa.me/5511961651633?text=Olá! Quero encomendar o Cartão Digital - Modelo 4 por R$79,90."
-              target="_blank"
-              class="btn-card"
-              >Encomendar</a>
-          </div>
-
-          <!-- Card 5 -->
-          <div class="card">
-            <img src="Portifolio/img-carrossel/model5.png" alt="Cartão Digital 5" />
-            <h3>Cartão Digital - Modelo 5</h3>
-            <p class="descricao">
-              Design limpo e responsivo para todos os dispositivos.
-            </p>
-            <span class="preco">R$ 79,90</span>
-            <a
-              href="https://wa.me/5511961651633?text=Olá! Quero encomendar o Cartão Digital - Modelo 5 por R$79,90."
-              target="_blank"
-              class="btn-card"
-              >Encomendar</a>
-          </div>
-
-          <!-- Card 6 -->
-          <div class="card">
-            <img src="Portifolio/img-carrossel/model6.png" alt="Cartão Digital 6" />
-            <h3>Cartão Digital - Modelo 6</h3>
-            <p class="descricao">
-              Design limpo e responsivo para todos os dispositivos.
-            </p>
-            <span class="preco">R$ 79,90</span>
-            <a
-              href="https://wa.me/5511961651633?text=Olá! Quero encomendar o Cartão Digital - Modelo 6 por R$79,90."
-              target="_blank"
-              class="btn-card"
-              >Encomendar</a>
-          </div>
-
-          <!-- Card 7 -->
-          <div class="card">
-            <img src="Portifolio/img-carrossel/model7.png" alt="Cartão Digital 7" />
-            <h3>Cartão Digital - Modelo 7</h3>
-            <p class="descricao">
-              Design limpo e responsivo para todos os dispositivos.
-            </p>
-            <span class="preco">R$ 79,90</span>
-            <a
-              href="https://wa.me/5511961651633?text=Olá! Quero encomendar o Cartão Digital - Modelo 7 por R$79,90."
-              target="_blank"
-              class="btn-card"
-              >Encomendar</a>
-          </div>
-
-          <!-- Card 8 -->
-          <div class="card">
-            <img src="Portifolio/img-carrossel/model8.png" alt="Cartão Digital 8" />
-            <h3>Cartão Digital - Modelo 8</h3>
-            <p class="descricao">
-              Design limpo e responsivo para todos os dispositivos.
-            </p>
-            <span class="preco">R$ 79,90</span>
-            <a
-              href="https://wa.me/5511961651633?text=Olá! Quero encomendar o Cartão Digital - Modelo 8 por R$79,90."
-              target="_blank"
-              class="btn-card"
-              >Encomendar</a>
-          </div>
-
-          <!-- Card 9 -->
-          <div class="card">
-            <img src="Portifolio/img-carrossel/model9.png" alt="Cartão Digital 9" />
-            <h3>Cartão Digital - Modelo 9</h3>
-            <p class="descricao">
-              Design limpo e responsivo para todos os dispositivos.
-            </p>
-            <span class="preco">R$ 79,90</span>
-            <a
-              href="https://wa.me/5511961651633?text=Olá! Quero encomendar o Cartão Digital - Modelo 9 por R$79,90."
-              target="_blank"
-              class="btn-card"
-              >Encomendar</a>
-          </div>
-
-          <!-- Card 10 -->
-          <div class="card">
-            <img src="Portifolio/img-carrossel/model10.png" alt="Cartão Digital 10" />
-            <h3>Cartão Digital - Modelo 10</h3>
-            <p class="descricao">
-              Design limpo e responsivo para todos os dispositivos.
-            </p>
-            <span class="preco">R$ 79,90</span>
-            <a
-              href="https://wa.me/5511961651633?text=Olá! Quero encomendar o Cartão Digital - Modelo 10 por R$79,90."
-              target="_blank"
-              class="btn-card"
-              >Encomendar</a>
-          </div>
-
-          <!-- Card 11 -->
-          <div class="card">
-            <img src="Portifolio/img-carrossel/medico.png" alt="Cartão Digital 11" />
-            <h3>Cartão Digital - Modelo 11</h3>
-            <p class="descricao">
-              Design limpo e responsivo para todos os dispositivos.
-            </p>
-            <span class="preco">R$ 79,90</span>
-            <a
-              href="https://wa.me/5511961651633?text=Olá! Quero encomendar o Cartão Digital - Modelo 11 por R$79,90."
-              target="_blank"
-              class="btn-card"
-              >Encomendar</a>
-          </div>
-
-          <!-- Card 12 -->
-          <div class="card">
-            <img src="Portifolio/img-carrossel/padeiro.PNG" alt="Cartão Digital 12" />
-            <h3>Cartão Digital - Modelo 12</h3>
-            <p class="descricao">
-              Design limpo e responsivo para todos os dispositivos.
-            </p>
-            <span class="preco">R$ 79,90</span>
-            <a
-              href="https://wa.me/5511961651633?text=Olá! Quero encomendar o Cartão Digital - Modelo 12 por R$79,90."
-              target="_blank"
-              class="btn-card"
-              >Encomendar</a>
-          </div>
-
-        </div>
-
-        <!-- Botões -->
-        <div class="carrossel-botoes">
-          <button class="prev">⟨</button>
-          <button class="next">⟩</button>
-        </div>
-      </div>
-    </section>
-
-    <!-- 🔹 Modelos Desktop x Mobile -->
+    <!-- 🔹 Modelos -->
     <section id="modelos" class="modelos">
       <div class="bloco bloco1">
-        <div id="h2desk-mobile" class="texto">
+        <div class="texto">
           <h2>Modelos Desktop e Mobile</h2>
           <p>Confira alguns exemplos que preparei especialmente para você.</p>
           <a href="modelos.html" class="btn">Ver Modelos</a>
         </div>
         <div class="imagem">
-          <img
-            src="Portifolio/img-carrossel/telacell/desktop-mobile.png"
-            alt="Modelos Desktop e Mobile"
-          />
+          <img src="Portifolio/img-carrossel/telacell/desktop-mobile.png" alt="Modelos Desktop e Mobile" />
         </div>
       </div>
     </section>
 
+    <!-- 🔹 Cards de Eventos -->
+    <section id="cards-eventos" class="cards-eventos">
+      <h2>Cartões Digitais</h2>
+      <p>Escolha um tipo de evento para ver os detalhes do convite.</p>
 
- <!-- 🔹 Meus Projetos -->
-<section class="portfolioShowcase-section" id="projetos">
-  <h2 class="portfolioShowcase-title">Meus Projetos</h2>
+      <div class="botoes-categorias">
+        <button class="ativo" data-card="aniversario">🎉 Aniversário</button>
+        <button data-card="casamento">💍 Casamento</button>
+        <button data-card="formatura">🎓 Formatura</button>
+        <button data-card="chárevelação">👶 Chá-Revelação</button>
+      </div>
 
-  <div class="portfolioShowcase-carousel">
-    <button class="portfolioShowcase-btn portfolioShowcase-prev">&#10094;</button>
+      <div class="conteudo-card">
+        <div class="card-evento">
+          <img src="/portifolio/4-anos.png" alt="Evento">
+        </div>
 
-    <div class="portfolioShowcase-track">
-      <!-- Card 1 -->
-      <div class="portfolioShowcase-card">
-        <img src="IMG-PAGES/eu1.png" alt="Projeto 1" class="portfolioShowcase-img">
-        <div class="portfolioShowcase-overlay"></div>
-        <div class="portfolioShowcase-info">
-          <h3>Página de Vendas | Grande Treinamentos</h3>
-          <p>Apresentação moderna e estratégica para gerar conversões.</p>
-          <a href="https://seu-link-1.com" target="_blank" class="portfolioShowcase-btnVer">Ver Página</a>
+        <div class="caracteristicas">
+          <h4>Características do Design</h4>
+          <ul>
+            <li><span class="cor roxa"></span> Design Responsivo</li>
+            <li><span class="cor azul"></span> Iluminação Neon</li>
+            <li><span class="cor rosa"></span> Tipografia Moderna</li>
+            <li><span class="cor verde"></span> Gradiente Suave</li>
+          </ul>
+          <div class="botoes-secundarios">
+            <button>Preview</button>
+            <button>Download</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 🔹 Footer -->
+    <footer class="footer" id="contato">
+      <div class="footer-container">
+        <div class="footer-col about">
+          <h2>Portfólio Criativo</h2>
+          <p>Desenvolvedor UI/UX especializado em criar experiências digitais memoráveis com design moderno e animações cativantes.</p>
+          <div class="social-icons">
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#"><i class="fab fa-github"></i></a>
+            <a href="#"><i class="fab fa-dribbble"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-col links">
+          <h3>Links Rápidos</h3>
+          <ul>
+            <li><a href="#inicio">Início</a></li>
+            <li><a href="#carrossel-box">Carrosséis</a></li>
+            <li><a href="#cards-eventos">Cartões Digitais</a></li>
+            <li><a href="#modelos">Desktop x Mobile</a></li>
+            <li><a href="#contato">Contato</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col contact">
+          <h3>Contato</h3>
+          <ul>
+            <li><i class="fas fa-envelope"></i> contato@portfolio.com</li>
+            <li><i class="fas fa-phone"></i> +55 (11) 99999-9999</li>
+            <li><i class="fas fa-map-marker-alt"></i> São Paulo, Brasil</li>
+          </ul>
+          <div class="availability"><span class="dot"></span> Disponível para projetos</div>
         </div>
       </div>
 
-      <!-- Card 2 -->
-      <div class="portfolioShowcase-card">
-        <img src="img-portifolio/amburguegitantes.png" alt="Projeto 2" class="portfolioShowcase-img">
-        <div class="portfolioShowcase-overlay"></div>
-        <div class="portfolioShowcase-info">
-          <h3>Landing Page | Agência XPTO</h3>
-          <p>Layout vibrante e responsivo com foco em captação de leads.</p>
-          <a href="https://seu-link-2.com" target="_blank" class="portfolioShowcase-btnVer">Ver Página</a>
-        </div>
-      </div>
-
-      <!-- Card 3 -->
-      <div class="portfolioShowcase-card">
-        <img src="img-portifolio/cabel.png" alt="Projeto 3" class="portfolioShowcase-img">
-        <div class="portfolioShowcase-overlay"></div>
-        <div class="portfolioShowcase-info">
-          <h3>Institucional | Indústria10X</h3>
-          <p>Site corporativo com design tecnológico e interface moderna.</p>
-          <a href="https://seu-link-3.com" target="_blank" class="portfolioShowcase-btnVer">Ver Página</a>
-        </div>
-      </div>
-
-      <!-- Card 4 -->
-      <div class="portfolioShowcase-card">
-        <img src="img-portifolio/cabel.png" alt="Projeto 4" class="portfolioShowcase-img">
-        <div class="portfolioShowcase-overlay"></div>
-        <div class="portfolioShowcase-info">
-          <h3>Institucional | Indústria10X</h3>
-          <p>Site corporativo com design moderno.</p>
-          <a href="https://seu-link-4.com" target="_blank" class="portfolioShowcase-btnVer">Ver Página</a>
-        </div>
-      </div>
-
-      <!-- Card 5 -->
-      <div class="portfolioShowcase-card">
-        <img src="img-portifolio/cabel.png" alt="Projeto 5" class="portfolioShowcase-img">
-        <div class="portfolioShowcase-overlay"></div>
-        <div class="portfolioShowcase-info">
-          <h3>Institucional | Indústria10X</h3>
-          <p>Site corporativo com design moderno.</p>
-          <a href="https://seu-link-5.com" target="_blank" class="portfolioShowcase-btnVer">Ver Página</a>
-        </div>
-      </div>
-
-      <!-- Card 6 -->
-      <div class="portfolioShowcase-card">
-        <img src="img-portifolio/cabel.png" alt="Projeto 6" class="portfolioShowcase-img">
-        <div class="portfolioShowcase-overlay"></div>
-        <div class="portfolioShowcase-info">
-          <h3>Institucional | Indústria10X</h3>
-          <p>Site corporativo com design moderno.</p>
-          <a href="https://seu-link-6.com" target="_blank" class="portfolioShowcase-btnVer">Ver Página</a>
-        </div>
-      </div>
-
-      <!-- Card 7 -->
-      <div class="portfolioShowcase-card">
-        <img src="img-portifolio/cabel.png" alt="Projeto 7" class="portfolioShowcase-img">
-        <div class="portfolioShowcase-overlay"></div>
-        <div class="portfolioShowcase-info">
-          <h3>Institucional | Indústria10X</h3>
-          <p>Site corporativo com design moderno.</p>
-          <a href="https://seu-link-7.com" target="_blank" class="portfolioShowcase-btnVer">Ver Página</a>
-        </div>
-      </div>
-    </div> <!-- fecha track -->
-
-    <button class="portfolioShowcase-btn portfolioShowcase-next">&#10095;</button>
-  </div>
-</section>
-
-
-
-    <!-- 🔹 Rodapé estilo banner de vlogger -->
-    <footer id="contato" class="footer">
-      <div class="footer-content">
-        <div class="profile">
-          <h2>JOHN DOE</h2>
-          <span>VLOGGER</span>
-        </div>
-        <div class="avatar">
-          <img src="Portifolio/img-portifolio/eu.jpg" alt="John Doe" />
-        </div>
-        <div class="subscribe">
-          <span>SUBSCRIBE NOW</span>
-        </div>
-        <div class="social-icons">
-          <a href="#">
-            <img src="Portifolio/icones/facebook.png" alt="Facebook" />
-            <span>Facebook</span>
-          </a>
-          <a href="#">
-            <img src="Portifolio/icones/logogit2.png" alt="GitHub" />
-            <span>GitHub</span>
-          </a>
-          <a href="#">
-            <img src="Portifolio/icones/instagran.jpg" alt="Instagram" />
-            <span>Instagram</span>
-          </a>
-        </div>
+      <div class="divider"></div>
+      <div class="footer-bottom">
+        <p>© 2025 Portfólio Criativo. Todos os direitos reservados.</p>
       </div>
     </footer>
 

@@ -1,47 +1,8 @@
-(function() {
-  const container = document.querySelector(".carrossel-container");
-  if (!container) return;
 
-  const cards = container.querySelectorAll(".card");
-  const prevBtn = container.parentElement.querySelector(".carrossel-botoes .prev");
-  const nextBtn = container.parentElement.querySelector(".carrossel-botoes .next");
-
-  let index = Math.floor(cards.length / 2);
-
-  function updateCarousel() {
-    cards.forEach((card, i) => {
-      card.classList.remove("active");
-      if (i === index) card.classList.add("active");
-    });
-
-    const cardWidth = cards[0].offsetWidth + 30; // largura + margem
-    const containerWidth = container.parentElement.offsetWidth;
-    const offset = -(index * cardWidth - (containerWidth / 2 - cardWidth / 2));
-    container.style.transform = `translateX(${offset}px)`;
-  }
-
-  if (prevBtn) prevBtn.addEventListener("click", () => {
-    if (index > 0) index--;
-    updateCarousel();
-  });
-
-  if (nextBtn) nextBtn.addEventListener("click", () => {
-    if (index < cards.length - 1) index++;
-    updateCarousel();
-  });
-
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "ArrowLeft" && index > 0) index--;
-    if (e.key === "ArrowRight" && index < cards.length - 1) index++;
-    updateCarousel();
-  });
-
-  updateCarousel();
-})();
 
 
 /* ==============================
-   SESSÃO 2 – Carrossel Bloco3
+   SESSÃO 1 – Carrossel Bloco1
    ============================== */
 (function() {
   const carrosselBox = document.querySelector('#caixinhaCarrosselBox');
@@ -80,3 +41,57 @@
 
   updateCarouselBox();
 })();
+
+/* =============Cards de Eventos=================*/
+
+document.addEventListener("DOMContentLoaded", () => {
+  const botoes = document.querySelectorAll(".botoes-categorias button");
+  const cardEvento = document.querySelector(".card-evento img");
+  if (!botoes.length || !cardEvento) return;
+
+  const cards = {
+    aniversario: "/portifolio/4-anos.png",
+    casamento: "/portifolio/casamento.png",
+    formatura: "/portifolio/formatura.png",
+    chárevelação: "/portifolio/charev.png"
+  };
+
+  botoes.forEach(botao => {
+    botao.addEventListener("click", () => {
+      // remover classe ativo de todos
+      botoes.forEach(b => b.classList.remove("ativo"));
+      botao.classList.add("ativo");
+
+      const tipo = botao.dataset.card?.toLowerCase();
+      if (cards[tipo]) {
+        cardEvento.src = cards[tipo];
+      }
+    });
+  });
+});
+
+
+  botoes.forEach(btn => {
+    btn.addEventListener("click", () => {
+      botoes.forEach(b => b.classList.remove("ativo"));
+      btn.classList.add("ativo");
+
+      const tipo = btn.getAttribute("data-card");
+      const c = cards[tipo];
+
+      cardEvento.classList.add("fade");
+      setTimeout(() => {
+        cardEvento.innerHTML = `
+          <img src="${c.img}" alt="${c.titulo}">
+          <h3>${c.titulo}</h3>
+          <ul>
+            <li>${c.data}</li>
+            <li>${c.hora}</li>
+            <li>${c.local}</li>
+          </ul>
+          <button class="btn-convidar">${c.botao}</button>
+        `;
+        cardEvento.classList.remove("fade");
+      }, 300);
+    });
+  });

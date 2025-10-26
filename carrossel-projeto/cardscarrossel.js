@@ -1,6 +1,7 @@
 // ==========================
 // CARROSSEL MODELO 1
 // ==========================
+// 🔹 Tipo: "Coverflow" ou "Carousel 3D" (cards centralizados, vizinhos inclinados)
 const carrossel1 = document.querySelector('.carrossel.modelo1');
 if (carrossel1) {
   const container = carrossel1.querySelector('.carrossel-container');
@@ -15,38 +16,28 @@ if (carrossel1) {
     cards.forEach((card, i) => {
       card.classList.remove('active', 'left', 'right', 'far-left', 'far-right');
 
-      if (i === index) {
-        card.classList.add('active');
-      } else if (i === index - 1) {
-        card.classList.add('left');
-      } else if (i === index + 1) {
-        card.classList.add('right');
-      } else if (i === index - 2) {
-        card.classList.add('far-left');
-      } else if (i === index + 2) {
-        card.classList.add('far-right');
-      }
+      if (i === index) card.classList.add('active');
+      else if (i === index - 1) card.classList.add('left');
+      else if (i === index + 1) card.classList.add('right');
+      else if (i === index - 2) card.classList.add('far-left');
+      else if (i === index + 2) card.classList.add('far-right');
     });
 
     const cardWidth = cards[0].offsetWidth + 30;
     const containerWidth = carrossel1.offsetWidth;
     const offset = -(index * cardWidth - (containerWidth / 2 - cards[0].offsetWidth / 2));
     container.style.transform = `translateX(${offset}px)`;
-    container.style.transition = "transform 0.6s ease"; // 🔹 transição suave
+    container.style.transition = "transform 0.6s ease";
   }
 
   nextBtn.addEventListener('click', () => {
-    if (index < total - 1) {
-      index++;
-      updateCarousel();
-    }
+    if (index < total - 1) index++;
+    updateCarousel();
   });
 
   prevBtn.addEventListener('click', () => {
-    if (index > 0) {
-      index--;
-      updateCarousel();
-    }
+    if (index > 0) index--;
+    updateCarousel();
   });
 
   window.addEventListener('resize', updateCarousel);
@@ -54,10 +45,10 @@ if (carrossel1) {
 }
 
 
-
 // ==========================
 // CARROSSEL MODELO 2
 // ==========================
+// 🔹 Tipo: "Media Carousel" ou "Video Carousel" (centraliza o item ativo)
 const carrossel2 = document.querySelector('.carrossel.modelo2');
 if (carrossel2) {
   const container2 = carrossel2.querySelector('.carrossel-container');
@@ -81,7 +72,8 @@ if (carrossel2) {
 
     const cardWidth = cards2[0].offsetWidth + (window.innerWidth <= 600 ? 15 : 30);
     const containerWidth = carrossel2.offsetWidth;
-    const offset = -(index2 * cardWidth - (containerWidth / 2 - cards2[0].offsetWidth / 2));
+    const offset = -(index2 * cardWidth - (containerWidth - cardWidth) / 2); // centraliza
+
     container2.style.transform = `translateX(${offset}px)`;
   }
 
@@ -123,9 +115,11 @@ if (carrossel2) {
   updateCarousel2();
 }
 
+
 // ==========================
 // CARROSSEL MODELO 3
 // ==========================
+// 🔹 Tipo: "Simple Carousel"
 const carrossel3 = document.querySelector('.carrossel.modelo3');
 if (carrossel3) {
   const container3 = carrossel3.querySelector('.carrossel-container');
@@ -158,13 +152,14 @@ if (carrossel3) {
 // ==========================
 // CARROSSEL MODELO 4
 // ==========================
+// 🔹 Tipo: "Centered Carousel" ou "Card Slider" (centraliza card ativo)
 const carrossel4 = document.querySelector('.carrossel.modelo4');
 const container4 = carrossel4.querySelector('.carrossel-container');
 const cards4 = carrossel4.querySelectorAll('.card4');
 const prevBtn4 = carrossel4.querySelector('.prev');
 const nextBtn4 = carrossel4.querySelector('.next');
 
-let index4 = 1; // card central inicialmente
+let index4 = 1;
 
 function updateCarousel4() {
   cards4.forEach((card, i) => {
@@ -172,10 +167,11 @@ function updateCarousel4() {
     if (i === index4) card.classList.add('active');
   });
 
-  const cardWidth = cards4[0].offsetWidth + 20; // largura + gap
-  const containerWidth = carrossel4.offsetWidth;
-  const offset =
-    -(index4 * cardWidth - (containerWidth / 2 - cards4[0].offsetWidth / 2));
+ const gap = 30; // mesmo do CSS
+const cardWidth = cards4[0].offsetWidth;
+const offset = -(index4 * (cardWidth + gap) - (containerWidth - cardWidth) / 2);
+ // centraliza
+
   container4.style.transform = `translateX(${offset}px)`;
 }
 
@@ -189,27 +185,22 @@ function nextCard4() {
   updateCarousel4();
 }
 
-// Botões
 prevBtn4.addEventListener('click', prevCard4);
 nextBtn4.addEventListener('click', nextCard4);
 
-// Teclado (setas esquerda/direita)
 window.addEventListener('keydown', (e) => {
-  if (e.key === 'ArrowLeft') {
-    prevCard4();
-  } else if (e.key === 'ArrowRight') {
-    nextCard4();
-  }
+  if (e.key === 'ArrowLeft') prevCard4();
+  else if (e.key === 'ArrowRight') nextCard4();
 });
 
 window.addEventListener('resize', updateCarousel4);
 updateCarousel4();
 
 
-
 // ==========================
 // CARROSSEL MODELO 5 (AUTOPLAY)
 // ==========================
+// 🔹 Tipo: "Autoplay Carousel" ou "Loop Carousel"
 const carrossel5 = document.querySelector('.carrossel.modelo5');
 if (carrossel5) {
   const container5 = carrossel5.querySelector('.carrossel-container');
@@ -238,7 +229,6 @@ if (carrossel5) {
     updateCarousel5();
   });
 
-  // Autoplay
   setInterval(() => {
     index5 = (index5 + 1) % cards5.length;
     updateCarousel5();
@@ -247,3 +237,25 @@ if (carrossel5) {
   window.addEventListener('resize', updateCarousel5);
   updateCarousel5();
 }
+
+
+// ==========================
+// BOTÕES PARA TROCA DE CARROSSEL
+// ==========================
+document.addEventListener("DOMContentLoaded", () => {
+  const botoes = document.querySelectorAll(".botoes-carrosseis button");
+  const carrosseis = document.querySelectorAll(".carrossel-box");
+
+  botoes.forEach(btn => {
+    btn.addEventListener("click", () => {
+      botoes.forEach(b => b.classList.remove("ativo"));
+      btn.classList.add("ativo");
+
+      const tipo = btn.getAttribute("data-carousel");
+      carrosseis.forEach(carrossel => {
+        carrossel.classList.remove("ativo");
+        if (carrossel.classList.contains(tipo)) carrossel.classList.add("ativo");
+      });
+    });
+  });
+});

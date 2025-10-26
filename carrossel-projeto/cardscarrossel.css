@@ -115,6 +115,44 @@ section {
   transition: transform 0.5s ease;
 }
 
+
+.botoes-carrosseis {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin: 20px 0 40px;
+}
+
+.botoes-carrosseis button {
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.botoes-carrosseis button.ativo,
+.botoes-carrosseis button:hover {
+  background: linear-gradient(90deg, #7b47ff, #00bfff);
+  box-shadow: 0 0 15px rgba(123, 71, 255, 0.6);
+}
+
+.carrossel-box {
+  display: none;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.5s ease;
+}
+
+.carrossel-box.ativo {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
 /* ===================== MODELO 1 ===================== */
 .card1 {
   flex: 0 0 auto;
@@ -183,10 +221,10 @@ section {
 
 
 /* ===================== MODELO 2 ===================== */
-.carrossel.modelo2 .carrossel-container {
+.carrossel.modelo2 .carrossel-container { 
   display: flex;
-  justify-content: flex-start;
-  gap: 30px;
+  justify-content: center;
+  gap: 60px;
   transition: transform 0.5s ease;
   align-items: center;
 }
@@ -200,6 +238,7 @@ section {
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: 3rem;
   font-size: 1.5rem;
   position: relative;
   box-shadow: 
@@ -212,6 +251,8 @@ section {
 .card2 img, .card2 video { width: 100%; height: 100%; object-fit: cover; border-radius: 12px; }
 .card2.active { transform: scale(1.2); background: #e67e22; }
 .card2.active .play-btn { opacity: 1; animation: pulse 1.5s infinite; }
+
+
 
 /* ===================== MODELO 3 ===================== */
 .carrossel.modelo3 .carrossel-container { 
@@ -255,13 +296,15 @@ section {
 /* ===================== MODELO 4 ===================== */
 .carrossel.modelo4 .carrossel-container {
   display: flex;
-  justify-content: flex-start; /* deixa o JS controlar a centralização */
+  justify-content: center; /* centraliza os cards */
   align-items: center;
   gap: 30px;
   perspective: 1000px;
   width: 100%;
-  transition: transform 0.5s ease; /* suaviza o movimento */
+  overflow: hidden; /* evita que o container "vaze" */
+  position: relative;
 }
+
 
 .card4 {
   width: 180px;
@@ -277,7 +320,10 @@ section {
   height: 100%;
   transform-style: preserve-3d;
   transition: transform 0.6s ease;
+  border-radius: 20px;  /* adicionado */
+  overflow: hidden;     /* adicionado */
 }
+
 
 .card4:hover .card-inner {
   transform: rotateY(180deg);
@@ -297,6 +343,7 @@ section {
   color: #fff;
 }
 
+
 .card-front { background: #3498db; }
 .card-back { background: #2ecc71; transform: rotateY(180deg); }
 
@@ -310,6 +357,25 @@ section {
   opacity: 0.8;
   z-index: 1;
 }
+
+.card4 {
+  width: 180px;
+  height: 250px;
+  flex: 0 0 auto;
+  perspective: 1000px;
+  transition: transform 0.5s ease, opacity 0.5s ease;
+  border-radius: 20px; /* garante cantos arredondados */
+  overflow: hidden;    /* importante para transform 3D */
+}
+
+.card4.active {
+  transform: scale(1.2);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+  z-index: 10;
+  border-radius: 20px; /* repete aqui para garantir */
+  overflow: hidden;
+}
+
 
 /* ===================== MODELO 5 ===================== */
 .carrossel.modelo5 .carrossel-container {
