@@ -53,10 +53,13 @@ body {
   align-items: center;
   gap: 3rem;
   flex-wrap: wrap;
-  padding: 120px 17% 80px;
+  padding: 0;          /* 🔸 Remove todo o espaço interno */
+  margin: 0;           /* 🔸 Garante que não haja margem externa */
   min-height: 100vh;
   text-align: left;
+  background-color: #1a0033;
 }
+
 
 .texto {
   flex: 1 1 400px;
@@ -284,7 +287,7 @@ body {
     border-radius: 0px;
     padding: 30px;
     width: 100%;
-    margin: 40px auto;
+    margin: 0px auto;
     gap: 30px;
     color: white;
     position: relative;
