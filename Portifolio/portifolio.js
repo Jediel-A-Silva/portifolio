@@ -4,43 +4,31 @@
 /* ==============================
    SESSÃO 1 – Carrossel Bloco1
    ============================== */
-(function() {
-  const carrosselBox = document.querySelector('#caixinhaCarrosselBox');
-  if (!carrosselBox) return;
+document.addEventListener("DOMContentLoaded", () => {
+  const slides = document.querySelectorAll(".slideBox");
+  const dots = document.querySelectorAll(".dot");
+  let index = 0;
+  const tempoTroca = 2500; // 2,5 segundos
+  function mostrarSlide(i) {
+    slides.forEach((s, idx) => s.classList.toggle("ativo", idx === i));
+    dots.forEach((d, idx) => d.classList.toggle("ativo", idx === i));
+  }
 
-  const slidesBox = carrosselBox.querySelectorAll('.slideBox');
-  let indexBox = 0;
+  function proximoSlide() {
+    index = (index + 1) % slides.length;
+    mostrarSlide(index);
+  }
 
-  function updateCarouselBox() {
-    slidesBox.forEach((slide, i) => {
-      slide.classList.toggle('ativo', i === indexBox);
+  dots.forEach((dot, i) => {
+    dot.addEventListener("click", () => {
+      index = i;
+      mostrarSlide(index);
     });
-  }
-
-  function prevSlideBox() {
-    indexBox = (indexBox - 1 + slidesBox.length) % slidesBox.length;
-    updateCarouselBox();
-  }
-
-  function nextSlideBox() {
-    indexBox = (indexBox + 1) % slidesBox.length;
-    updateCarouselBox();
-  }
-
-  const prevBtnBox = carrosselBox.parentElement.querySelector('.navigation .prev');
-  const nextBtnBox = carrosselBox.parentElement.querySelector('.navigation .next');
-
-  if (prevBtnBox) prevBtnBox.addEventListener('click', prevSlideBox);
-  if (nextBtnBox) nextBtnBox.addEventListener('click', nextSlideBox);
-
-  // Teclado global, mas só para este carrossel
-  window.addEventListener('keydown', (e) => {
-    if (e.key === 'ArrowLeft') prevSlideBox();
-    if (e.key === 'ArrowRight') nextSlideBox();
   });
 
-  updateCarouselBox();
-})();
+  // autoplay
+  setInterval(proximoSlide, tempoTroca);
+});
 
 /* =============Cards de Eventos=================*/
 

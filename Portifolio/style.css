@@ -8,7 +8,7 @@
 body {
   font-family: Arial, sans-serif;
   /* NOVO: Gradient espelhado com roxo escuro */
-  background: linear-gradient(180deg, #1a0b45 0%, #7c5ada 50%, #1a0b45 100%);
+  background: linear-gradient(180deg, #1a0b45 0%, #412f74 50%, #450b38 100%);
   background-size: cover;
   background-attachment: fixed; /* opcional: dá efeito parallax */
   color: #ffffff;
@@ -42,26 +42,6 @@ body {
   color: #082e1f;
 }
 
-.search {
-  display: flex;
-  align-items: center;
-}
-
-.search input {
-  padding: 5px 10px;
-  border: none;
-  border-radius: 5px 0 0 5px;
-  outline: none;
-}
-
-.search button {
-  padding: 6px 10px;
-  border: none;
-  background: #00ff99;
-  color: #000;
-  border-radius: 0 5px 5px 0;
-  cursor: pointer;
-}
 
 
 /* ===== HERO SECTION ===== */
@@ -73,7 +53,7 @@ body {
   align-items: center;
   gap: 3rem;
   flex-wrap: wrap;
-  padding: 120px 8% 80px;
+  padding: 120px 17% 80px;
   min-height: 100vh;
   text-align: left;
 }
@@ -185,14 +165,12 @@ body {
 }
 
   .foto-glow {
-  width: 320px;
-  max-width: 90%;
-  border-radius: 20px 5px 20px 5px;
-  /* sombra maior na direita e embaixo */
-  box-shadow: 20px 20px 40px 5px rgba(0, 255, 153, 0.8);
-  transition: transform 0.4s ease;
-  position: relative;
-  z-index: 1;
+    width: 380px;
+    max-width: 90%;
+    border-radius: 20px 5px 20px 5px;
+    transition: transform 0.4s ease;
+    position: relative;
+    z-index: 1;
 }
 
 /* 🔹 Corrigir espaçamento e fundo da seção "Sobre" */
@@ -240,8 +218,6 @@ body {
   width: calc(100% + 10px);
   height: calc(100% + 10px);
   border-radius: 25px;
-  background: linear-gradient(45deg, #00ff99, #ff00ff, #00ffff, #ffff00);
-  background-size: 300% 300%; /* aumenta o efeito de movimento */
   z-index: 0;
   filter: blur(30px);
   animation: glow 5s linear infinite;
@@ -279,9 +255,11 @@ body {
 
 
 .modelos .bloco img {
-  max-width: 65%;
-  border-radius: 10px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    max-width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    height: 25rem;
+    margin-bottom: 5rem;
 }
 
 /* Texto */
@@ -299,70 +277,74 @@ body {
 
 /* ===== CARROSSEL BLOCO3 ===== */
 .bloco3 {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background: linear-gradient(135deg, #0d0d0d, #2a004f, #1a0033);
-  border-radius: 20px;
-  padding: 30px;
-  width: 100%;
-  max-width: 70rem;
-  margin: 40px auto;
-  gap: 30px;
-  color: white;
-  position: relative; /* necessário para os slides absolutos */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: linear-gradient(135deg, #0d0d0d, #2a004f, #1a0033);
+    border-radius: 0px;
+    padding: 30px;
+    width: 100%;
+    margin: 40px auto;
+    gap: 30px;
+    color: white;
+    position: relative;
+    height: 45rem;
 }
 
 /* Caixa do carrossel */
 .caixinha-carrossel-box {
   position: relative;
-  flex: 1;
-  height: 350px;
+  width: 100%;
+  max-width: 700px;
+  margin: 0 auto;
   overflow: hidden;
-  border-radius: 15px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  border-radius: 20px;
 }
 
-/* Contêiner dos slides */
 .carrosselBox {
-  position: relative;
-  width: 100%;
-  height: 100%;
+  display: flex;
+  transition: transform 0.6s ease-in-out;
 }
 
-/* Cada slide */
 .slideBox {
-  position: absolute;   /* todos ocupam o mesmo lugar */
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  opacity: 0;          /* invisível por padrão */
-  transition: opacity 0.5s ease-in-out;
+  min-width: 100%;
+  display: none;
+}
+
+.slideBox.ativo {
+  display: block;
 }
 
 .slideBox img {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 15px;
   display: block;
+  border-radius: 20px;
 }
 
-/* Slide ativo */
-.slideBox.ativo {
-  opacity: 1;
-  z-index: 1;
-}
-
-/* Navegação */
-.navigation {
+/* 🔘 Bolinhas de navegação */
+.dots {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
   display: flex;
-  gap: 15px;
-  margin-top: 25px;
-  justify-content: flex-start; /* mantém no canto esquerdo */
+  gap: 8px;
 }
 
+.dot {
+  width: 12px;
+  height: 12px;
+  background-color: #bbb;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.dot.ativo {
+  background-color: #333;
+}
+
+/* Botões de navegação */
 .nav-btn {
   width: 45px;
   height: 45px;
@@ -440,27 +422,28 @@ body {
 /* ==== Social ==== */
 .social-icons {
   display: flex;
-  gap: 18px;
-  margin-top: 30px;
+  gap: 15px;
 }
 
 .social-icons a {
-  width: 48px;
-  height: 48px;
+  text-decoration: none; /* remove o sublinhado */
+  color: #b8b4f3;        /* cor dos ícones */
+  font-size: 24px;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 12px;
   border-radius: 12px;
-  background: rgba(255, 255, 255, 0.1);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: #cfcff8;
-  font-size: 1.3rem;
-  transition: 0.3s;
+  transition: 0.3s ease;
 }
 
 .social-icons a:hover {
-  background: rgba(255, 255, 255, 0.2);
-  color: #fff;
+  color: #fff;            /* muda a cor no hover */
+  transform: scale(1.1);  /* leve aumento no hover */
 }
+
+.social-icons a:focus {
+  outline: none;          /* remove a borda azul ao clicar */
+}
+
 
 /* ==== Disponibilidade ==== */
 .availability {
@@ -837,351 +820,64 @@ border: 2px 2px 4px 2px rgba(255, 255, 255, 0.1);
 
 
 
-/* ===== RESPONSIVO ===== */
-@media (max-width: 900px) {
-  .portfolioShowcase-track {
-    flex-wrap: wrap;
-    justify-content: center;
-  }
+/* ===================== MEDIA QUERIES ===================== */
 
-  .portfolioShowcase-card {
-    width: 90%;
-    max-width: 400px;
-    height: 300px;
-  }
-}
-
-
-
-/* Responsivo */
+/* --- Tablet --- */
 @media (max-width: 768px) {
-  .portfolioShowcase-track {
-    gap: 10px;
-  }
-  .portfolioShowcase-card {
-    min-width: 280px;
-  }
-}
-
-
-
-@keyframes rotate {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
-
-/* ===== EFEITOS VISUAIS ESTILO XAMÃ.AI ===== */
-
-.nome {
-  background: linear-gradient(90deg, #00ffcc, #00ffff, #ff00ff);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: gradienteFluxo 5s infinite linear;
-}
-
-@keyframes gradienteFluxo {
-  0% { background-position: 0%; }
-  100% { background-position: 200%; }
-}
-
-.reveal {
-  opacity: 1 !important;
-  transform: translateY(0) !important;
-  transition: all 0.8s ease;
-}
-
-.bloco, .carrossel, .footer, .foto-glow {
-  opacity:1;
-  transform: translateY(0);
-}
-
-
-
-.subscribe span {
-  font-size: 18px;
-  font-weight: bold;
-  cursor: pointer;
-   flex-direction: column;
-}
-
-/* social-icons */
-.social-icons {
-    display: flex;
-    flex-direction: row;
-    gap: 12px;
-}
-
-.social-icons a {
-  display: flex;
-  align-items: center;
-  text-decoration: none;
-  color: #fff; /* cor do texto */
-  font-size: 16px;
-  transition: color 0.3s;
-}
-
-.social-icons a:hover {
-  color: #00ffff; /* cor no hover */
-}
-
-.social-icons img {
-  width: 24px;
-  height: 24px;
-  margin-right: 8px; /* espaço entre logo e texto */
-}
-
-/* ============================== */
-/* ===== RESPONSIVIDADE ======== */
-/* ============================== */
-
-/* === Tablets médios (até 1024px) === */
-/* --- Tablets (até 1024px) --- */
-@media (max-width: 1024px) {
-
-  .navbar {
-    background: rgba(0, 0, 0, 0.8);
-    padding: 15px 5%;
-    flex-wrap: wrap;
-  }
-
-  .navbar .logo {
-    font-size: 20px;
-    margin-bottom: 10px;
-  }
-
   .navbar nav {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 15px;
-    width: 100%;
-  }
-
-  .navbar nav a {
-    font-size: 15px;
-  }
-
-  .search {
-    margin-top: 10px;
-    width: 100%;
-  }
-
-  .hero {
-    flex-direction: column;
-    text-align: center;
-    padding: 130px 5% 80px;
-  }
-
-  .texto {
-    max-width: 95%;
-  }
-
-  .imagem {
-    margin-top: 30px;
-  }
-
-  .foto-glow {
-    width: 260px;
-  }
-
-  .carrossel,
-  .bloco3 {
-    width: 100%;
-    max-width: 100%;
-    margin: 20px auto;
-  }
-}
-
-
-/* --- Tablets grandes até 1024px --- */
-@media (max-width: 1024px) {
-
-  .navbar {
-    padding: 15px 5%;
-    background: rgba(0,0,0,0.8);
-    flex-wrap: wrap;
-  }
-
-  .navbar .logo { font-size: 20px; margin-bottom: 10px; }
-
-  .navbar nav { flex-wrap: wrap; gap: 15px; width: 100%; }
-
-  .navbar nav a { font-size: 15px; }
-
-  .search { margin-top: 10px; width: 100%; }
-
-  .hero {
-    flex-direction: column;
-    text-align: center;
-    padding: 130px 5% 80px;
-  }
-
-  .texto { max-width: 95%; }
-
-  .imagem { margin-top: 30px; }
-
-  .foto-glow { width: 260px; }
-
-  .carrossel, .bloco3 { width: 100%; max-width: 100%; margin: 20px auto; }
-}
-
-
-/* --- Celulares grandes (até 768px) --- */
-/* --- Tablets até 768px --- */
-@media (max-width: 768px) {
-
-  .navbar {
-    padding: 12px 5%;
-    flex-direction: column;
-    background: rgba(0,0,0,0.9);
-  }
-
-  .navbar .logo { font-size: 18px; }
-
-  .navbar nav {
-    flex-direction: column;
-    width: 100%;
-    gap: 10px;
-  }
-
-  .search { width: 100%; margin-top: 10px; }
-
-  .hero {
-    flex-direction: column;
-    padding-top: 180px;
-    text-align: center;
-  }
-
-  .texto { max-width: 90%; }
-
-  .texto h1 { font-size: 24px; }
-  .texto h2 { font-size: 18px; }
-  .texto p { font-size: 15px; }
-
-  .btn { font-size: 14px; padding: 10px 18px; }
-
-  .icones { justify-content: center; gap: 15px; }
-
-  .imagem { margin-top: 20px; }
-
-  .foto-glow { width: 240px; }
-
-  .card { flex: 0 0 180px; }
-
-  .footer-content {
-    flex-direction: column;
-    text-align: center;
-    gap: 20px;
-  }
-
-  .social-icons { flex-direction: row; justify-content: center; }
-}
-
-/* --- Celulares pequenos (até 480px) --- */
-/* --- Mobile First: telas pequenas --- */
-@media (max-width: 480px) {
-
-  body {
-    font-size: 14px;
-  }
-
-  .navbar {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 10px 5%;
-    background: rgba(0,0,0,0.9);
-  }
-
-  .navbar .logo {
-    font-size: 18px;
-    margin-bottom: 10px;
-  }
-
-  .navbar nav {
-    flex-direction: column;
-    gap: 10px;
-    width: 100%;
-  }
-
-  .search {
-    width: 100%;
-    margin-top: 10px;
-    flex-direction: column;
-  }
-
-  .hero {
-    flex-direction: column;
-    padding: 160px 5% 50px;
-    text-align: center;
-  }
-
-  .texto {
-    max-width: 90%;
-  }
-
-  .texto h1 { font-size: 22px; }
-  .texto h2 { font-size: 16px; }
-  .texto p { font-size: 14px; }
-
-  .btn {
-    font-size: 14px;
-    padding: 10px 18px;
-  }
-
-  .icones {
-    justify-content: center;
     gap: 15px;
   }
 
-  .imagem {
-    margin-top: 20px;
+  .texto h1 {
+    font-size: 2.2rem;
   }
 
   .foto-glow {
     width: 200px;
+    height: 200px;
   }
-
-  .carrossel {
-    width: 100%;
-    padding: 20px 0;
-  }
-
-  .card {
-    flex: 0 0 160px;
-  }
-
-  .footer {
-    padding: 25px 5%;
-  }
-
-  .profile h2 { font-size: 18px; }
-  .profile span { font-size: 12px; }
-
-  .social-icons {
-    flex-direction: row;
-    justify-content: center;
-    gap: 12px;
-  }
-
-  .social-icons a { font-size: 14px; }
 }
 
+/* --- Mobile (atualizado) --- */
+@media (max-width: 480px) {
+  .navbar nav {
+    flex-direction: row; /* 🔹 Mantém os itens da navbar lado a lado */
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+  }
 
+  .hero {
+    display: flex;
+    flex-direction: row; /* 🔹 Lado a lado */
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    padding: 120px 5% 50px;
+    text-align: left;
+  }
 
-/* ===== RESPONSIVO ===== */
-@media (max-width: 900px) {
-  .portfolioShowcase-track {
-    flex-wrap: wrap;
+  .texto {
+    flex: 1;
+    max-width: 50%;
+  }
+
+  .texto h1 {
+    font-size: 1.6rem;
+  }
+
+  .texto p {
+    font-size: 0.95rem;
+  }
+
+  .foto-container {
+    flex: 1;
+    display: flex;
     justify-content: center;
   }
 
-  .portfolioShowcase-card {
-    width: 90%;
-    max-width: 400px;
-    height: 300px;
+  .foto-glow {
+    width: 160px;
+    height: 160px;
   }
 }
