@@ -1,4 +1,4 @@
-/* ===== RESET ===== */ 
+/* ===== RESET ===== */
 * {
   margin: 0;
   padding: 0;
@@ -16,7 +16,6 @@ body {
   overflow-x: hidden;
   scroll-padding-top: 80px;
 }
-
 
 /* ===== NAVBAR ===== */
 .navbar {
@@ -37,12 +36,9 @@ body {
   color: #ffffff;
 }
 
-
 .navbar nav a:hover {
   color: #082e1f;
 }
-
-
 
 /* ===== HERO SECTION ===== */
 .hero {
@@ -53,17 +49,18 @@ body {
   align-items: center;
   gap: 3rem;
   flex-wrap: wrap;
-  padding: 0;          /* 🔸 Remove todo o espaço interno */
-  margin: 0;           /* 🔸 Garante que não haja margem externa */
+  padding: 0; /* 🔸 Remove todo o espaço interno */
+  margin: 0; /* 🔸 Garante que não haja margem externa */
   min-height: 100vh;
   text-align: left;
-  background-color: #1a0033;
+  background: url(/portifolio//img-portifolio/back.png) no-repeat center center/cover;
 }
-
 
 .texto {
   flex: 1 1 400px;
   z-index: 2;
+  left: 12rem;
+  position: relative;
 }
 
 .texto p {
@@ -86,9 +83,7 @@ body {
   color: #ffffff;
 }
 
-
-
-#h2desk-mobile{
+#h2desk-mobile {
   font-size: clamp(18px, 2.5vw, 24px);
   margin-bottom: 15px;
   color: #ffffff;
@@ -115,7 +110,7 @@ body {
 /* ===== redes-sociais===== */
 /* ===== redes-sociais ===== */
 .icones {
-  margin-top: 1.5rem;   /* espaço embaixo do botão */
+  margin-top: 1.5rem; /* espaço embaixo do botão */
   display: flex;
   gap: 25px;
 }
@@ -146,10 +141,13 @@ body {
 }
 
 .modelos {
+  height: 45rem;
   padding: 4rem 2rem;
   display: flex;
+  background-color: #1a0033;
   flex-direction: column;
   gap: 4rem;
+
 }
 
 /* Cada bloco */
@@ -160,20 +158,19 @@ body {
   gap: 2rem;
 }
 
-
-
 .foto-container {
   position: relative;
   display: inline-block;
 }
 
-  .foto-glow {
-    width: 380px;
-    max-width: 90%;
-    border-radius: 20px 5px 20px 5px;
-    transition: transform 0.4s ease;
-    position: relative;
-    z-index: 1;
+.foto-glow {
+  width: 380px;
+  max-width: 90%;
+  border-radius: 20px 5px 20px 5px;
+  transition: transform 0.4s ease;
+  position: relative;
+  z-index: 1;
+  right: 4rem;
 }
 
 /* 🔹 Corrigir espaçamento e fundo da seção "Sobre" */
@@ -199,25 +196,26 @@ body {
 }
 
 /* 🔹 Ajustar outras seções para manter padrão */
-#projetos, #depoimentos {
+#projetos,
+#depoimentos {
   background: transparent;
   color: #fff;
   padding: 60px 20px;
   text-align: center;
 }
 
-#projetos h2, #depoimentos h2 {
+#projetos h2,
+#depoimentos h2 {
   color: #00c3ff;
   margin-bottom: 15px;
 }
 
-
 /* Pseudo-elemento animado para o gradiente */
 .foto-container::before {
-  content: '';
+  content: "";
   position: absolute;
-  top: -5px;        /* começa um pouco acima */
-  left: -5px;       /* começa um pouco à esquerda */
+  top: -5px; /* começa um pouco acima */
+  left: -5px; /* começa um pouco à esquerda */
   width: calc(100% + 10px);
   height: calc(100% + 10px);
   border-radius: 25px;
@@ -229,16 +227,21 @@ body {
 
 /* animação do gradiente */
 @keyframes glow {
-  0% { background-position: 0% 0%; }
-  50% { background-position: 100% 100%; }
-  100% { background-position: 0% 0%; }
+  0% {
+    background-position: 0% 0%;
+  }
+  50% {
+    background-position: 100% 100%;
+  }
+  100% {
+    background-position: 0% 0%;
+  }
 }
 
 /* hover opcional */
 .foto-container:hover .foto-glow {
   transform: scale(1.05);
 }
-
 
 /* Imagem responsiva */
 .imagem {
@@ -256,13 +259,12 @@ body {
   transform: scale(1.1); /* aumenta 10% */
 }
 
-
 .modelos .bloco img {
-    max-width: 100%;
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-    height: 25rem;
-    margin-bottom: 5rem;
+  max-width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  height: 25rem;
+  margin-bottom: 5rem;
 }
 
 /* Texto */
@@ -275,23 +277,20 @@ body {
   flex-direction: row-reverse;
 }
 
-
-
-
 /* ===== CARROSSEL BLOCO3 ===== */
 .bloco3 {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background: linear-gradient(135deg, #0d0d0d, #2a004f, #1a0033);
-    border-radius: 0px;
-    padding: 30px;
-    width: 100%;
-    margin: 0px auto;
-    gap: 30px;
-    color: white;
-    position: relative;
-    height: 45rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: linear-gradient(135deg, #0d0d0d, #2a004f, #1a0033);
+  border-radius: 0px;
+  padding: 30px;
+  width: 100%;
+  margin: 0px auto;
+  gap: 30px;
+  color: white;
+  position: relative;
+  height: 45rem;
 }
 
 /* Caixa do carrossel */
@@ -355,20 +354,20 @@ body {
   border: none;
   font-size: 1.5rem;
   cursor: pointer;
-  background: rgba(255,255,255,0.1);
+  background: rgba(255, 255, 255, 0.1);
   color: white;
   transition: 0.3s;
 }
 
 .nav-btn:hover {
-  background: rgba(255,255,255,0.3);
+  background: rgba(255, 255, 255, 0.3);
 }
 
 .footer {
   background: linear-gradient(180deg, #1b0a3a, #2d1663 60%, #3d1a78);
   color: #e0e0ff;
   padding: 80px 10% 40px;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 .footer-container {
@@ -430,7 +429,7 @@ body {
 
 .social-icons a {
   text-decoration: none; /* remove o sublinhado */
-  color: #b8b4f3;        /* cor dos ícones */
+  color: #b8b4f3; /* cor dos ícones */
   font-size: 24px;
   background: rgba(255, 255, 255, 0.05);
   padding: 12px;
@@ -439,14 +438,13 @@ body {
 }
 
 .social-icons a:hover {
-  color: #fff;            /* muda a cor no hover */
-  transform: scale(1.1);  /* leve aumento no hover */
+  color: #fff; /* muda a cor no hover */
+  transform: scale(1.1); /* leve aumento no hover */
 }
 
 .social-icons a:focus {
-  outline: none;          /* remove a borda azul ao clicar */
+  outline: none; /* remove a borda azul ao clicar */
 }
-
 
 /* ==== Disponibilidade ==== */
 .availability {
@@ -497,7 +495,6 @@ body {
   }
 }
 
-
 .profile h2 {
   font-size: 24px;
   margin-bottom: 5px;
@@ -528,13 +525,12 @@ body {
   padding: 5px; /* espessura da borda */
   background: conic-gradient(
     from 0deg,
-  #7aa8ffcc,
-  #8b7bbdcc,
-  #8a75ffcc,
-  #a178d6cc
-);
-  -webkit-mask: 
-    radial-gradient(farthest-side, #0000 calc(100% - 5px), #000 0);
+    #7aa8ffcc,
+    #8b7bbdcc,
+    #8a75ffcc,
+    #a178d6cc
+  );
+  -webkit-mask: radial-gradient(farthest-side, #0000 calc(100% - 5px), #000 0);
   -webkit-mask-composite: destination-out;
   mask-composite: exclude;
   animation: rotate 3s linear infinite;
@@ -550,13 +546,11 @@ body {
   z-index: 1; /* garante que fique acima da borda */
 }
 
-
-
-
 /* ===== Cartoes digitais ===== */
 .cards-eventos {
   text-align: center;
   padding: 60px 20px;
+  height: 45rem;
   background: radial-gradient(circle at top left, #2e0066, #0f0124);
   color: #fff;
   font-family: "Poppins", sans-serif;
@@ -606,19 +600,23 @@ body {
 .card-evento {
   width: 300px;
   padding: 20px;
-border: 2px 2px 4px 2px rgba(255, 255, 255, 0.1);
+  border: 2px 2px 4px 2px rgba(255, 255, 255, 0.1);
   border-radius: 15px;
-  background: linear-gradient(180deg, rgba(123, 71, 255, 0.4), rgba(255, 0, 204, 0.2));
+  background: linear-gradient(
+    180deg,
+    rgba(123, 71, 255, 0.4),
+    rgba(255, 0, 204, 0.2)
+  );
   box-shadow: 0 0 30px rgba(255, 0, 255, 0.3);
   transition: all 0.5s ease;
   animation: fadeIn 0.6s ease;
 }
 
 .card-evento img {
-    width: 15rem;
-    border-radius: 10px;
-    margin-bottom: 10px;
-    height: 17rem;
+  width: 15rem;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  height: 17rem;
 }
 
 .card-evento h3 {
@@ -683,10 +681,18 @@ border: 2px 2px 4px 2px rgba(255, 255, 255, 0.1);
   border-radius: 50%;
 }
 
-.roxa { background: #b84aff; }
-.azul { background: #4ab8ff; }
-.rosa { background: #ff4ae0; }
-.verde { background: #4aff9b; }
+.roxa {
+  background: #b84aff;
+}
+.azul {
+  background: #4ab8ff;
+}
+.rosa {
+  background: #ff4ae0;
+}
+.verde {
+  background: #4aff9b;
+}
 
 .botoes-secundarios {
   display: flex;
@@ -709,19 +715,21 @@ border: 2px 2px 4px 2px rgba(255, 255, 255, 0.1);
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
-
-
-
-
 
 /* ===== CARDS ===== */
 .portfolioShowcase-card {
   position: relative;
-  flex: 0 0 auto;     /* garante que todos fiquem em linha */
-  width: 280px;       /* menor que antes, sobra espaço nas laterais */
+  flex: 0 0 auto; /* garante que todos fiquem em linha */
+  width: 280px; /* menor que antes, sobra espaço nas laterais */
   height: 420px;
   border-radius: 18px;
   overflow: hidden;
@@ -752,7 +760,11 @@ border: 2px 2px 4px 2px rgba(255, 255, 255, 0.1);
 .portfolioShowcase-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(0,0,0,0) 40%, rgba(0,0,0,0.85) 100%);
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0) 40%,
+    rgba(0, 0, 0, 0.85) 100%
+  );
   z-index: 2;
 }
 
@@ -797,31 +809,27 @@ border: 2px 2px 4px 2px rgba(255, 255, 255, 0.1);
   background: none;
   border: none;
   color: #fff;
-  font-size: 2.5rem;  /* aumenta a visibilidade */
+  font-size: 2.5rem; /* aumenta a visibilidade */
   cursor: pointer;
   transition: 0.3s;
-  z-index: 10;         /* maior que o z-index dos cards */
+  z-index: 10; /* maior que o z-index dos cards */
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  pointer-events: all;  /* garante que clique funcione */
+  pointer-events: all; /* garante que clique funcione */
 }
 
 .portfolioShowcase-prev {
-  left: 10px;   /* distância da borda da tela */
+  left: 10px; /* distância da borda da tela */
 }
 
 .portfolioShowcase-next {
-  right: 10px;  /* distância da borda da tela */
+  right: 10px; /* distância da borda da tela */
 }
 
 .portfolioShowcase-btn:hover {
   color: #00bfff;
 }
-
-
-
-
 
 /* ===================== MEDIA QUERIES ===================== */
 
@@ -850,20 +858,20 @@ border: 2px 2px 4px 2px rgba(255, 255, 255, 0.1);
     width: 100%;
   }
 
-.navbar .logo{
-  display: none;
-}
+  .navbar .logo {
+    display: none;
+  }
 
   .hero {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: center;
-        gap: 15px;
-        padding: 0px 5% 50px;
-        text-align: -webkit-left;
-        top: -1rem;
-    }
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    padding: 0px 5% 50px;
+    text-align: -webkit-left;
+    top: -1rem;
+  }
 
   .texto {
     flex: 1;
@@ -885,9 +893,9 @@ border: 2px 2px 4px 2px rgba(255, 255, 255, 0.1);
   }
 
   .foto-glow {
-        width: 260px;
-        height: 210px;
-    }
+    width: 260px;
+    height: 210px;
+  }
 
   .botoes-categorias button {
     background: #2b005c;
@@ -897,12 +905,11 @@ border: 2px 2px 4px 2px rgba(255, 255, 255, 0.1);
     border-radius: 20px;
     cursor: pointer;
     transition: 0.3s;
-}
-.botoes-categorias {
-    display: flex
-;
+  }
+  .botoes-categorias {
+    display: flex;
     justify-content: center;
     gap: 10px;
     margin-bottom: 40px;
-}
+  }
 }
