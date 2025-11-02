@@ -53,13 +53,14 @@ body {
   margin: 0; /* 🔸 Garante que não haja margem externa */
   min-height: 100vh;
   text-align: left;
-  background: url(/portifolio//img-portifolio/back.png) no-repeat center center/cover;
+  background: url(/portifolio//img-portifolio/back.png) no-repeat center
+    center/cover;
 }
 
 .texto {
   flex: 1 1 400px;
   z-index: 2;
-  left: 12rem;
+  left: 0rem;
   position: relative;
 }
 
@@ -147,7 +148,6 @@ body {
   background-color: #1a0033;
   flex-direction: column;
   gap: 4rem;
-
 }
 
 /* Cada bloco */
@@ -851,12 +851,14 @@ body {
 
 /* --- Mobile (atualizado) --- */
 @media (max-width: 480px) {
-  .navbar nav {
-    flex-direction: row; /* 🔹 Mantém os itens da navbar lado a lado */
-    justify-content: center;
-    gap: 10px;
-    width: 100%;
-  }
+      .navbar nav {
+        flex-direction: column;
+        justify-content: center;
+        gap: 10px;
+        width: 100%;
+        left: 1.5rem;
+        position: relative;
+    }
 
   .navbar .logo {
     display: none;
@@ -867,10 +869,10 @@ body {
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    gap: 15px;
+    gap: 0px;
     padding: 0px 5% 50px;
     text-align: -webkit-left;
-    top: -1rem;
+    top: 0rem;
   }
 
   .texto {
@@ -894,7 +896,8 @@ body {
 
   .foto-glow {
     width: 260px;
-    height: 210px;
+    height: 225px;
+    left: 0rem;
   }
 
   .botoes-categorias button {
