@@ -1,13 +1,10 @@
 /* ===================== RESET E BASE ===================== */
 body {
   font-family: Arial, sans-serif;
-
-  /* Imagem de fundo */
   background-image: url('/portifolio/img-portifolio/back.png');
   background-size: cover;       /* Faz a imagem cobrir toda a tela */
   background-repeat: no-repeat; /* Evita que a imagem se repita */
   background-position: center;  /* Centraliza a imagem */
-
   padding: 20px;
 }
 /* h1 e h2 */
@@ -410,3 +407,17 @@ section {
   .btn { font-size: 1.5rem; padding: 0.3rem 0.6rem; }
   .play-btn { font-size: 1.5rem; padding: 8px 12px; }
 }
+
+@media (max-width: 480px) {
+  body {
+  font-family: Arial, sans-serif;
+  background-image: url('/portifolio/img-portifolio/back.png');
+  background-size: cover;       /* Faz a imagem cobrir toda a tela */
+  background-repeat: no-repeat; /* Evita que a imagem se repita */
+  background-position: center;  /* Centraliza a imagem */
+  padding: 20px;
+}
+
+}
+
+
