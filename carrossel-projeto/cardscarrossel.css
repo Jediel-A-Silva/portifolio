@@ -411,7 +411,7 @@ section {
 @media (max-width: 480px) {
   body {
   font-family: Arial, sans-serif;
-  background-image: url('/portifolio/img-portifolio/back.png');
+  background-image: url('img-portifolio/back.png');
   background-size: cover;       /* Faz a imagem cobrir toda a tela */
   background-repeat: no-repeat; /* Evita que a imagem se repita */
   background-position: center;  /* Centraliza a imagem */
