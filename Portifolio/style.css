@@ -57,6 +57,7 @@ body {
     center/cover;
 }
 
+/* Texto */
 .texto {
   flex: 1 1 400px;
   z-index: 2;
@@ -85,12 +86,42 @@ body {
   color: #ffffff;
 }
 
+
+
 #h2desk-mobile {
   font-size: clamp(18px, 2.5vw, 24px);
   margin-bottom: 15px;
   color: #ffffff;
   position: relative;
   left: 5%; /* menos fixo que 14rem */
+}
+
+.caixinhatexto {
+  flex: 1 1 400px;
+  z-index: 2;
+  left: 10rem;
+  position: relative;
+  top: 3.2rem;
+}
+
+.caixinhatexto p {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.caixinhatexto h1 {
+  font-size: clamp(28px, 4vw, 40px);
+  margin-bottom: 10px;
+}
+
+.caixinhatexto h1 .nome {
+  color: #00ff99;
+}
+
+.caixinhatexto h2 {
+  font-size: clamp(18px, 2.5vw, 24px);
+  margin-bottom: 20px;
+  color: #ffffff;
 }
 
 /* Botão */
@@ -850,7 +881,7 @@ body {
   }
 }
 
-/* --- Mobile (atualizado) --- */
+/* --- MOBILE (atualizado) --- */
 @media (max-width: 480px) {
   body .hero {
     background-image: url("/portifolio/img-portifolio/back.png") !important;
@@ -860,22 +891,26 @@ body {
     background-attachment: scroll !important;
     min-height: 100vh;
   }
-  .navbar nav {
-    flex-direction: column;
-    justify-content: center;
-    gap: 10px;
-    width: 100%;
-    left: 1.5rem;
-    position: relative;
-  }
 
-  .navbar .logo {
-    display: none;
+  /* 🔹 Layout lado a lado */
+  .hero {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    text-align: left;
+    padding: 60px 5%;
   }
 
   .texto {
     flex: 1;
     max-width: 50%;
+    position: relative;
+    top: 0;
+    z-index: 2;
+    left: 0;
   }
 
   .texto h1 {
@@ -893,9 +928,31 @@ body {
   }
 
   .foto-glow {
-    width: 260px;
-    height: 225px;
-    left: 0rem;
+        width: 160px;
+        height: auto;
+        left: 1rem;
+    }
+
+  /* --- Navbar no mobile --- */
+  .navbar nav {
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    left: 1.5rem;
+    position: relative;
+  }
+
+  .navbar .logo {
+    display: none;
+  }
+
+  /* --- Botões --- */
+  .botoes-categorias {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 40px;
   }
 
   .botoes-categorias button {
@@ -907,21 +964,15 @@ body {
     cursor: pointer;
     transition: 0.3s;
   }
-  .botoes-categorias {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    margin-bottom: 40px;
+
+  /* --- Cards --- */
+  .cards-eventos {
+    text-align: center;
+    padding: 60px 20px;
+    height: 45rem;
+    object-fit: cover;
+    background: radial-gradient(circle at top left, #2e0066, #0f0124);
+    color: #fff;
+    font-family: "Poppins", sans-serif;
   }
-
-.cards-eventos {
-  text-align: center;
-  padding: 60px 20px;
-  height: 45rem;
-   object-fit: cover;
-  background: radial-gradient(circle at top left, #2e0066, #0f0124);
-  color: #fff;
-  font-family: "Poppins", sans-serif;
-}
-
 }
