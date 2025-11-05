@@ -279,10 +279,10 @@ section {
 }
 
 .carrossel.modelo3 .card3 img {
-  width: 30rem;
-  height: 20rem;
-  transform: scaleX(1.2);
-  border-radius: 20px;
+    width: 30rem;
+    height: 20rem;
+    transform: scaleX(1.2);
+    border-radius: 20px;
 }
 
 /* ===================== MODELO 4 ===================== */
@@ -293,13 +293,13 @@ section {
   gap: 30px;
   perspective: 1000px;
   width: 100%;
-  overflow: hidden; /* evita que o container "vaze" */
+  overflow: visible; /* evita que o container "vaze" */
   position: relative;
 }
 
 
 .card4 {
-  width: 180px;
+  width: 380px;
   height: 250px;
   flex: 0 0 auto;
   perspective: 1000px;
@@ -437,8 +437,8 @@ section {
     }
     
     .card1, .card2, .card4, .card5 { 
-        width: 250px; 
-        height: 260px; 
+        width: 200px; 
+        height: 210px; 
         font-size: 1rem; 
     }
 
@@ -458,6 +458,13 @@ section {
   .botoes-carrosseis button {
     padding: 2px 0px;
 }
+/* carrossel modelo 3 */
+.carrossel.modelo3 .card3 img {
+    width: 246px;
+    height: 250px;
+    transform: scaleX(1.2);
+    border-radius: 20px;
+}
 
 /* --- TELA MUITO PEQUENA (ex: Smartphones pequenos) --- */
 @media (max-width: 480px) {
@@ -472,7 +479,14 @@ section {
 
   /* Faz os cards ocuparem um espaço ainda menor */
   .card1, .card2, .card4, .card5 {
-    width: 180px;
+    width: 200px;
     height: 200px;
   }
+  .botoes-carrosseis {
+    display: flex
+;
+    justify-content: center;
+    gap: 15px;
+    margin: -100px 0 60px;
+}
 }

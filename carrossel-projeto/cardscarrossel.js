@@ -55,7 +55,7 @@ if (carrossel1) {
             // 8rem é aproximadamente 128px (8 * 16px).
             // Use 128 ou o valor que visualmente se ajustou melhor.
             // Se 8rem foi o ideal, use 128px.
-            staticCorrection = 285; 
+            staticCorrection = 340; 
         }
 
         // Aplica o offset calculado + a correção estática (para mover o carrossel mais para a direita)
@@ -107,7 +107,9 @@ if (carrossel2) {
 
     const cardWidth = cards2[0].offsetWidth + (window.innerWidth <= 600 ? 15 : 30);
     const containerWidth = carrossel2.offsetWidth;
-    const offset = -(index2 * cardWidth - (containerWidth - cardWidth) / 2); // centraliza
+    const offset = -(index2 * cardWidth - (containerWidth - cardWidth) / 2 + -25);
+
+// centraliza
 
     container2.style.transform = `translateX(${offset}px)`;
   }
