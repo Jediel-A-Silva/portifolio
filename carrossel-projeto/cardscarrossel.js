@@ -1,49 +1,84 @@
 // ==========================
-// CARROSSEL MODELO 1
+// CARROSSEL MODELO 1 - SOLUÇÃO FINAL ROBUSTA PARA MOBILE
 // ==========================
-// 🔹 Tipo: "Coverflow" ou "Carousel 3D" (cards centralizados, vizinhos inclinados)
 const carrossel1 = document.querySelector('.carrossel.modelo1');
+
 if (carrossel1) {
-  const container = carrossel1.querySelector('.carrossel-container');
-  const cards = carrossel1.querySelectorAll('.card1');
-  const prevBtn = carrossel1.querySelector('.prev');
-  const nextBtn = carrossel1.querySelector('.next');
+    const container = carrossel1.querySelector('.carrossel-container');
+    const cards = carrossel1.querySelectorAll('.card1');
+    const prevBtn = carrossel1.querySelector('.prev');
+    const nextBtn = carrossel1.querySelector('.next');
 
-  let index = Math.floor(cards.length / 2);
-  const total = cards.length;
+    // Começa no item central (Math.floor garante um índice inteiro)
+    let index = Math.floor(cards.length / 2); 
+    const total = cards.length;
 
-  function updateCarousel() {
-    cards.forEach((card, i) => {
-      card.classList.remove('active', 'left', 'right', 'far-left', 'far-right');
+    function updateCarousel() {
+        cards.forEach((card, i) => {
+            // Lógica de classes 'active', 'left', 'right', etc.
+            card.classList.remove('active', 'left', 'right', 'far-left', 'far-right');
 
-      if (i === index) card.classList.add('active');
-      else if (i === index - 1) card.classList.add('left');
-      else if (i === index + 1) card.classList.add('right');
-      else if (i === index - 2) card.classList.add('far-left');
-      else if (i === index + 2) card.classList.add('far-right');
+            if (i === index) card.classList.add('active');
+            else if (i === index - 1) card.classList.add('left');
+            else if (i === index + 1) card.classList.add('right');
+            else if (i === index - 2) card.classList.add('far-left');
+            else if (i === index + 2) card.classList.add('far-right');
+        });
+
+        // 1. LER O GAP DINAMICAMENTE
+        const gapStyle = window.getComputedStyle(container).gap;
+        const GAP = parseFloat(gapStyle) || (carrossel1.offsetWidth > 600 ? 30 : 15); 
+        
+        // 2. LARGURAS
+        const CARD_WIDTH = cards[0].offsetWidth; 
+        const SCALE_FACTOR = 1.15; // transform: scale(1.15)
+        const ACTIVE_CARD_WIDTH = CARD_WIDTH * SCALE_FACTOR; 
+
+        // Largura total ocupada por um card
+        const cardAndGap = CARD_WIDTH + GAP; 
+
+        // 3. CÁLCULO DA POSIÇÃO DE INÍCIO E CENTRO DO CARD ATIVO:
+        const cardStartPosition = index * cardAndGap;
+        const cardCenter = cardStartPosition + (ACTIVE_CARD_WIDTH / 2);
+
+        // 4. CENTRO DA ÁREA VISÍVEL
+        const containerCenter = carrossel1.offsetWidth / 2;
+
+        // 5. DESLOCAMENTO (offset)
+        const offset = -(cardCenter - containerCenter);
+
+        // 6. CORREÇÃO DE DESLOCAMENTO ESTÁTICO (Substitui o left: 8rem do CSS)
+        let staticCorrection = 0;
+        
+        // Se a tela for pequena (<= 600px), adicionamos o deslocamento que funcionou
+        if (window.innerWidth <= 600) {
+            // 8rem é aproximadamente 128px (8 * 16px).
+            // Use 128 ou o valor que visualmente se ajustou melhor.
+            // Se 8rem foi o ideal, use 128px.
+            staticCorrection = 285; 
+        }
+
+        // Aplica o offset calculado + a correção estática (para mover o carrossel mais para a direita)
+        container.style.transform = `translateX(${offset + staticCorrection}px)`;
+        container.style.styleTransition = "transform 0.6s ease";
+    }
+
+    nextBtn.addEventListener('click', () => {
+        if (index < total - 1) index++;
+        updateCarousel();
     });
 
-    const cardWidth = cards[0].offsetWidth + 30;
-    const containerWidth = carrossel1.offsetWidth;
-    const offset = -(index * cardWidth - (containerWidth / 2 - cards[0].offsetWidth / 2));
-    container.style.transform = `translateX(${offset}px)`;
-    container.style.transition = "transform 0.6s ease";
-  }
+    prevBtn.addEventListener('click', () => {
+        if (index > 0) index--;
+        updateCarousel();
+    });
 
-  nextBtn.addEventListener('click', () => {
-    if (index < total - 1) index++;
-    updateCarousel();
-  });
-
-  prevBtn.addEventListener('click', () => {
-    if (index > 0) index--;
-    updateCarousel();
-  });
-
-  window.addEventListener('resize', updateCarousel);
-  updateCarousel();
+    // Garante que o cálculo é refeito ao redimensionar a janela (responsividade)
+    window.addEventListener('resize', updateCarousel);
+    
+    // Roda a função pela primeira vez para centralizar no carregamento
+    updateCarousel(); 
 }
-
 
 // ==========================
 // CARROSSEL MODELO 2

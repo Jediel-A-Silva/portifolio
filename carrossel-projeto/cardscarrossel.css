@@ -1,7 +1,7 @@
 /* ===================== RESET E BASE ===================== */
 body {
   font-family: Arial, sans-serif;
-  background-image: url('portifolio/img-portifolio/back.png');
+  background-image: url('img-carrossel/back.png');
   background-size: cover;       /* Faz a imagem cobrir toda a tela */
   background-repeat: no-repeat; /* Evita que a imagem se repita */
   background-position: center;  /* Centraliza a imagem */
@@ -390,34 +390,89 @@ section {
 }
 
 @keyframes scroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
-
 /* ===================== RESPONSIVIDADE ===================== */
+
+/* --- TELA MÉDIA (ex: Tablets em modo paisagem, Telas maiores que o mobile) --- */
 @media (max-width: 1024px) {
-  .carrossel { width: 90%; }
-  .card1, .card2, .card4, .card5 { width: 160px; height: 200px; }
-  .btn { font-size: 1.8rem; padding: 0.4rem 0.8rem; }
-  .play-btn { font-size: 1.8rem; padding: 10px 14px; }
+  .carrossel { 
+    width: 90%; /* Aumenta a largura para 90% em telas menores */
+  }
+  
+  .card1, .card2, .card4, .card5 { 
+    width: 160px; 
+    height: 200px; 
+  }
+  
+  .btn { 
+    font-size: 1.8rem; 
+    padding: 0.4rem 0.8rem; 
+  }
+  
+  .play-btn { 
+    font-size: 1.8rem; 
+    padding: 10px 14px; 
+  }
 }
 
+/* --- TELA PEQUENA (ex: Smartphones grandes) --- */
 @media (max-width: 600px) {
-  body { padding: 10px; }
-  .carrossel { width: 100%; padding: 1rem 0; }
-  .carrossel-container { gap: 15px; }
-  .card1, .card2, .card4, .card5 { width: 120px; height: 160px; font-size: 1rem; }
-  .btn { font-size: 1.5rem; padding: 0.3rem 0.6rem; }
-  .play-btn { font-size: 1.5rem; padding: 8px 12px; }
+    /* O body tem padding de 10px, mas não o alteramos */
+    
+    .carrossel { 
+        width: 100%; /* OK, mas pode estar dentro do padding do body */
+        padding: 1rem 0; 
+    }
+    
+    /* *CORREÇÃO ESTRATÉGICA:* Forçamos o modelo 1 a ser a largura total da tela (viewport) */
+    .carrossel.modelo1 {
+        width: 100vw; /* Ocupa 100% da LARGURA DA VIEWPORT (tela) */
+        margin-left: calc(50% - 50vw); /* Truque para centralizar a 100vw */
+        /* Isso garante que carrossel1.offsetWidth seja a largura total da tela */
+    }
+
+    .carrossel.modelo1 .carrossel-container {
+        gap: 15px; 
+        padding-left: 0; 
+        padding-right: 0; 
+    }
+    
+    .card1, .card2, .card4, .card5 { 
+        width: 250px; 
+        height: 260px; 
+        font-size: 1rem; 
+    }
+
+    /* ... outras regras ... */
+}
+  
+  .btn { 
+    font-size: 1.5rem; 
+    padding: 0.3rem 0.6rem; 
+  }
+  
+  .play-btn { 
+    font-size: 1.5rem; 
+    padding: 8px 12px; 
+  }
+
+  .botoes-carrosseis button {
+    padding: 2px 0px;
 }
 
+/* --- TELA MUITO PEQUENA (ex: Smartphones pequenos) --- */
 @media (max-width: 480px) {
   body {
-  font-family: Arial, sans-serif;
-  background-image: url('img-portifolio/back.png');
-  background-size: cover;       /* Faz a imagem cobrir toda a tela */
-  background-repeat: no-repeat; /* Evita que a imagem se repita */
-  background-position: center;  /* Centraliza a imagem */
-  padding: 20px;
+    /* Mantém as regras de fundo mais agressivas para telas pequenas */
+    background-image: url('img-carrossel/back.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 20px 0; /* Remove padding lateral para telas muito pequenas */
+  }
+
+  /* Faz os cards ocuparem um espaço ainda menor */
+  .card1, .card2, .card4, .card5 {
+    width: 180px;
+    height: 200px;
+  }
 }
-
-}
-
-
