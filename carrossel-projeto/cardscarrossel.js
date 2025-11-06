@@ -107,7 +107,7 @@ if (carrossel2) {
 
     const cardWidth = cards2[0].offsetWidth + (window.innerWidth <= 600 ? 15 : 30);
     const containerWidth = carrossel2.offsetWidth;
-    const offset = -(index2 * cardWidth - (containerWidth - cardWidth) / 2 + -25);
+    const offset = -(index2 * cardWidth - (containerWidth - cardWidth) / 2 + -135);
 
 // centraliza
 
@@ -184,58 +184,8 @@ if (carrossel3) {
   window.addEventListener('resize', updateCarousel3);
   updateCarousel3();
 }
-
-
 // ==========================
-// CARROSSEL MODELO 4
-// ==========================
-// 🔹 Tipo: "Centered Carousel" ou "Card Slider" (centraliza card ativo)
-const carrossel4 = document.querySelector('.carrossel.modelo4');
-const container4 = carrossel4.querySelector('.carrossel-container');
-const cards4 = carrossel4.querySelectorAll('.card4');
-const prevBtn4 = carrossel4.querySelector('.prev');
-const nextBtn4 = carrossel4.querySelector('.next');
-
-let index4 = 1;
-
-function updateCarousel4() {
-  cards4.forEach((card, i) => {
-    card.classList.remove('active');
-    if (i === index4) card.classList.add('active');
-  });
-
- const gap = 30; // mesmo do CSS
-const cardWidth = cards4[0].offsetWidth;
-const offset = -(index4 * (cardWidth + gap) - (containerWidth - cardWidth) / 2);
- // centraliza
-
-  container4.style.transform = `translateX(${offset}px)`;
-}
-
-function prevCard4() {
-  index4 = (index4 - 1 + cards4.length) % cards4.length;
-  updateCarousel4();
-}
-
-function nextCard4() {
-  index4 = (index4 + 1) % cards4.length;
-  updateCarousel4();
-}
-
-prevBtn4.addEventListener('click', prevCard4);
-nextBtn4.addEventListener('click', nextCard4);
-
-window.addEventListener('keydown', (e) => {
-  if (e.key === 'ArrowLeft') prevCard4();
-  else if (e.key === 'ArrowRight') nextCard4();
-});
-
-window.addEventListener('resize', updateCarousel4);
-updateCarousel4();
-
-
-// ==========================
-// CARROSSEL MODELO 5 (AUTOPLAY)
+// CARROSSEL MODELO 4 (AUTOPLAY)
 // ==========================
 // 🔹 Tipo: "Autoplay Carousel" ou "Loop Carousel"
 const carrossel5 = document.querySelector('.carrossel.modelo5');
